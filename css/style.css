@@ -1,0 +1,270 @@
+html{
+	margin: 0;
+}
+@font-face {
+   font-family: BRRR-Medium;
+   src: url(BRRR-Medium.otf);
+}
+
+* {
+   font-family: BRRR-Medium;
+}
+body {
+    margin: 0;
+    background-image: url(../img/GRADIENT2.png);
+    /*background-position: 50% 50%;*/
+    background-size: cover;
+    background-repeat: none;
+    height: 100%;
+    background-position: 0% 0%;
+    -webkit-animation: imageAnimation 10s linear infinite 0s;
+    -moz-animation: imageAnimation 10s linear infinite 0s;
+    -o-animation: imageAnimation 10s linear infinite 0s;
+    -ms-animation: imageAnimation 10s linear infinite 0s;
+    animation: imageAnimation 10s linear infinite 0s; 
+}
+
+
+header{
+    position: fixed;
+    /*width: 900px;*/
+    text-align: left;
+    color: #000;
+    /*margin-top:50px;*/
+    height: 198px;
+    width: 100%;
+    background: #fff;
+    padding-left: 100px;
+    z-index: 200;
+    background-image: url(../img/GRADIENT2.png);
+    background-size: 100% 2000px;
+    background-repeat: none;
+    background-position: 0% 0%;
+    -webkit-animation: imageAnimation 10s linear infinite 0s;
+    -moz-animation: imageAnimation 10s linear infinite 0s;
+    -o-animation: imageAnimation 10s linear infinite 0s;
+    -ms-animation: imageAnimation 10s linear infinite 0s;
+    animation: imageAnimation 10s linear infinite 0s; 
+}
+/*black bg */
+/*header{
+    position: fixed;
+    text-align: left;
+    color: #fff;
+    height: 198px;
+    width: 100%;
+    background: #000;
+    padding-left: 100px;
+    z-index: 0;
+    
+}*/
+h2{
+    font-size: 48px;
+    line-height: 20px;
+    word-spacing: 16pt;
+}
+h4{
+    font-size: 14px;
+}
+/* Scale canvas with resize attribute to full size */
+canvas[resize] {
+    width: 100%;
+    height: 100%;
+}
+
+.bgsvg{
+	position: absolute;
+    z-index: -1;
+	width: 100%;
+   /* height: 2000px;*/
+	-webkit-animation: moveimg 6s linear infinite 0s;
+	-moz-animation: moveimg 6s linear infinite 0s;
+    -o-animation: moveimg 6s linear infinite 0s;
+    -ms-animation: moveimg 6s linear infinite 0s;
+    animation: moveimg 6s linear infinite 0s; 
+}
+img{
+	position: absolute;
+}
+.move{
+	-webkit-animation: moveimg 6s linear infinite 0s;
+	-moz-animation: moveimg 6s linear infinite 0s;
+    -o-animation: moveimg 6s linear infinite 0s;
+    -ms-animation: moveimg 6s linear infinite 0s;
+    animation: moveimg 6s linear infinite 0s; 
+}
+.main{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+}
+.content{
+    /*background: #fff;*/
+    /*position: fixed;*/
+    /*height: 2000px;*/
+    width: 100%;
+    /*overflow-y: scroll;*/
+    padding-top: 200px;
+    z-index: 0;
+}
+.circle1{
+    width: 300px;
+}
+.content1{
+    padding-left:100px; 
+    /*height: 2000px;*/
+    z-index: 500;
+}
+.wrapper{
+    /*position: fixed;*/
+    /*justify-content:center;*/
+}
+.box{
+    will-change: transform;
+    margin-left: 60px;
+    margin-right: 40px;
+    margin-bottom: 100px;
+    background-image: url(../img/GRADIENT2.png);
+    background-size: cover;
+    background-repeat: none;
+    border-radius: 100%;
+    -webkit-animation: imageAnimation 10s linear infinite 0s;
+    -moz-animation: imageAnimation 10s linear infinite 0s;
+    -o-animation: imageAnimation 10s linear infinite 0s;
+    -ms-animation: imageAnimation 10s linear infinite 0s;
+    animation: imageAnimation 10s linear infinite 0s; 
+}
+.box:nth-of-type(1),.box:nth-of-type(6){
+    background-image: url(../img/GRADIENT4.png);
+    background-size: cover;
+    background-repeat: none;
+    
+    -webkit-animation: imageAnimationA 10s linear infinite 0s;
+    -moz-animation: imageAnimationA 10s linear infinite 0s;
+    -o-animation: imageAnimationA 10s linear infinite 0s;
+    -ms-animation: imageAnimationA 10s linear infinite 0s;
+    animation: imageAnimationA 10s linear infinite 0s; 
+}
+.box:nth-of-type(2), .box:nth-of-type(5){
+    background-image: url(../img/GRADIENT3.png);
+    background-size: cover;
+    background-repeat: none;
+    
+    -webkit-animation: imageAnimationB 5s linear infinite 0s;
+    -moz-animation: imageAnimationB 5s linear infinite 0s;
+    -o-animation: imageAnimationB 5s linear infinite 0s;
+    -ms-animation: imageAnimationB 5s linear infinite 0s;
+    animation: imageAnimationB 5s linear infinite 0s; 
+}
+.box:nth-of-type(3), .box:nth-of-type(4){
+    background-image: url(../img/GRADIENT3.png);
+    background-size: cover;
+    background-repeat: none;
+    
+    -webkit-animation: imageAnimationC 3s linear infinite 0s;
+    -moz-animation: imageAnimationC 3s linear infinite 0s;
+    -o-animation: imageAnimationC 3s linear infinite 0s;
+    -ms-animation: imageAnimationC 3s linear infinite 0s;
+    animation: imageAnimationC 3s linear infinite 0s; 
+}
+.wrapper .box:hover{
+    cursor: pointer;
+    background-color: #fff;
+    opacity: 0.7;
+    -webkit-animation: amplify 1s linear infinite 0s;
+    -moz-animation: amplify 1s linear infinite 0s;
+    -o-animation: amplify 1s linear infinite 0s;
+    -ms-animation: amplify 1s linear infinite 0s;
+    animation: amplify 1s linear infinite 0s; 
+}
+@-webkit-keyframes moveimg { 
+	
+    
+    25% {
+    	stroke-width:1;
+        margin-left:40px;
+        -webkit-animation-timing-function: linear; 
+    }
+    75% {
+    	stroke-width:10;
+        margin-left:-40px;
+        -webkit-animation-timing-function: linear; 
+    }
+    
+
+}
+@-webkit-keyframes imageAnimation { 
+    25% {
+        background-image: url(../img/GRADIENT5.png);
+        -webkit-animation-timing-function: linear; 
+    }
+    50% {
+        background-image: url(../img/GRADIENT6.png);
+        -webkit-animation-timing-function: linear; 
+    }
+    75% { 
+        background-image: url(../img/GRADIENT2.png);
+        -webkit-animation-timing-function: linear; 
+    }
+
+}
+@-webkit-keyframes imageAnimationA { 
+    25% {
+        background-image: url(../img/GRADIENT4.png);
+        -webkit-animation-timing-function: linear; 
+    }
+    50% {
+        background-image: url(../img/GRADIENT7.png);
+        -webkit-animation-timing-function: linear; 
+    }
+    75% { 
+        background-image: url(../img/GRADIENT3.png);
+        -webkit-animation-timing-function: linear; 
+    }
+
+}
+@-webkit-keyframes imageAnimationB { 
+    25% {
+        background-image: url(../img/GRADIENT6.png);
+        -webkit-animation-timing-function: linear; 
+    }
+    50% {
+        background-image: url(../img/GRADIENT2.png);
+        -webkit-animation-timing-function: linear; 
+    }
+    75% { 
+        background-image: url(../img/GRADIENT5.png);
+        -webkit-animation-timing-function: linear; 
+    }
+
+}
+@-webkit-keyframes imageAnimationC { 
+    25% {
+        background-image: url(../img/GRADIENT3.png);
+        -webkit-animation-timing-function: linear; 
+    }
+    50% {
+        background-image: url(../img/GRADIENT4.png);
+        -webkit-animation-timing-function: linear; 
+    }
+    75% { 
+        background-image: url(../img/GRADIENT7.png);
+        -webkit-animation-timing-function: linear; 
+    }
+
+}
+@-webkit-keyframes amplify {
+    40%{
+        transform: scale(1.05);
+    }
+    60%{
+        transform: scale(0.95);
+    }
+    80%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
