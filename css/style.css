@@ -77,6 +77,9 @@ h5{
     /*margin-top: -100px;*/
     /*padding-left: 20px;*/
 }
+h6{
+    font-size: 6px;
+}
 p{
     font-size: 10px;
     text-align: left;
@@ -130,7 +133,11 @@ img{
     animation: elephant_move 50s linear infinite 0s; 
 }
 .logo_e_s{
-    width: 50px;
+    position: relative;
+    width: 40px;
+    float: left;
+    padding-top:20px; 
+    padding-right: 20px;
 }
 .move{
 	-webkit-animation: moveimg 6s linear infinite 0s;
@@ -285,8 +292,9 @@ img{
 .speed-6 {
   transform: translateZ(-6px) scale(7);
 }*/
-.randomRoute{
-    position: absolute;
+footer{
+    background-color: transparent;
+    padding: 10px 35%;
 }
 @-webkit-keyframes moveimg { 
 	
@@ -405,7 +413,7 @@ img{
     }
     80%{
         transform: scale(1.1);
-        top:10%;
+        top:70%;
         left:50%;
         -webkit-animation-timing-function: linear; 
     }
@@ -428,7 +436,7 @@ h3{
     font-size: 16px;
 }
 h4{
-    width: 700px;
+    width: 70%
     font-size: 14px;
 }
 h5{
@@ -451,7 +459,7 @@ h3{
     font-size: 12px;
 }
 h4{
-    width: 500px;
+    width: 70%;
     font-size: 8px;
 }
 h5{
