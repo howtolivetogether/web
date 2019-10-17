@@ -296,6 +296,12 @@ footer{
     background-color: transparent;
     padding: 10px 35%;
 }
+.svgset{
+    float: left;
+    width: 50%;
+    background-color: #fff;
+    border: 2px solid #000;
+}
 @-webkit-keyframes moveimg { 
 	
     
@@ -389,13 +395,13 @@ footer{
 @-webkit-keyframes elephant_move{
     0%{
         transform: scale(1);
-        top:40%;
+        top:60%;
         left:10%;
         -webkit-animation-timing-function: linear; 
     }
     20%{
         transform: scale(0.9);
-        top:25%;
+        top:70%;
         left:30%;
         -webkit-animation-timing-function: linear; 
     }
@@ -407,20 +413,20 @@ footer{
     }
     60%{
         transform: scale(0.95);
-        top:40%;
+        top:80%;
         left:80%;
         -webkit-animation-timing-function: linear; 
     }
     80%{
         transform: scale(1.1);
-        top:70%;
+        top:40%;
         left:50%;
         -webkit-animation-timing-function: linear; 
     }
     100%{
         transform: scale(1);
-        top:30%;
-        left:20%;
+        top:60%;
+        left:10%;
         -webkit-animation-timing-function: linear; 
     }
 }
