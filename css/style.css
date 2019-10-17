@@ -8,9 +8,11 @@ html{
 
 * {
    font-family: BRRR-Medium;
+   text-transform: uppercase;
 }
 body {
     margin: 0;
+    background-color: #fff;
     background-image: url(../img/GRADIENT2.png);
     /*background-position: 50% 50%;*/
     background-size: cover;
@@ -25,7 +27,7 @@ body {
 }
 
 
-header{
+.shrink{
     position: fixed;
     /*width: 900px;*/
     text-align: left;
@@ -33,7 +35,7 @@ header{
     /*margin-top:50px;*/
     height: 198px;
     width: 100%;
-    background: #fff;
+    background-color: #fff;
     margin-left: 60px;
     padding-left: 20px;
     z-index: 200;
@@ -47,6 +49,7 @@ header{
     -ms-animation: imageAnimation 10s linear infinite 0s;
     animation: imageAnimation 10s linear infinite 0s; 
 }
+
 /*black bg */
 /*header{
     position: fixed;
@@ -61,14 +64,14 @@ header{
 }*/
 h2{
     font-size: 48px;
-    line-height: 20px;
+    line-height: 40px;
     word-spacing: 16pt;
 }
 h4{
     font-size: 14px;
 }
 h5{
-    font-size: 14px;
+    font-size: 16px;
     line-height: 14px;
     text-align: left;
     /*margin-top: -100px;*/
@@ -95,7 +98,12 @@ canvas[resize] {
     width: 100%;
     height: 100%;
 }
+.absolute{
+    position: absolute;
+}
+.tab{
 
+}
 .bgsvg{
 	position: absolute;
     z-index: -1;
@@ -109,6 +117,20 @@ canvas[resize] {
 }
 img{
 	position: absolute;
+}
+.logo_e{
+    z-index: -10;
+    width: 100px;
+    top:400px;
+    left:100px;
+    -webkit-animation: elephant_move 50s linear infinite 0s;
+    -moz-animation: elephant_move 50s linear infinite 0s;
+    -o-animation: elephant_move 50s linear infinite 0s;
+    -ms-animation: elephant_move 50s linear infinite 0s;
+    animation: elephant_move 50s linear infinite 0s; 
+}
+.logo_e_s{
+    width: 50px;
 }
 .move{
 	-webkit-animation: moveimg 6s linear infinite 0s;
@@ -146,21 +168,48 @@ img{
 .content1{
     scroll-snap-stop: always;
     scroll-snap-stop: normal;
+    margin-top: 100px;
     padding-left:100px; 
     min-height: 2000px;
     z-index: 500;
+}
+.timeline{
+    background-color: #fff;
+    width: 100%;
+    
+    position: absolute;
+    float: left;
+}
+.timeline h3{
+    /*margin: 20px;*/
+    transform:rotate(90deg);
 }
 .wrapper{
     /*text-align: center;*/
     /*position: absolute;*/
    float: left;
-   width: 33%;
     /*background: none;*/
    /* justify-content: center;*/
     /*position: fixed;*/
     /*justify-content:center;*/
 }
-
+.wrapper:nth-child(1){
+   width: 40%;
+}
+.wrapper:nth-child(2){
+   width: 30%;
+}
+.wrapper:nth-child(3){
+   width: 20%;
+}
+.wrapper h3{
+    margin-left: 50px;
+    padding-top: 10px;
+}
+.wrapper h3, .tab{
+    margin-top:-105px;
+    margin-bottom: 100px;
+}
 .box{
     will-change: transform;
     /*border: boxing;*/
@@ -213,7 +262,7 @@ img{
 .empty{
     opacity: 0;
 }
-.speed-1 {
+/*.speed-1 {
   transform: translateZ(-1px) scale(2);
 }
 
@@ -235,8 +284,10 @@ img{
 
 .speed-6 {
   transform: translateZ(-6px) scale(7);
+}*/
+.randomRoute{
+    position: absolute;
 }
-
 @-webkit-keyframes moveimg { 
 	
     
@@ -326,4 +377,90 @@ img{
     100%{
         transform: scale(1);
     }
+}
+@-webkit-keyframes elephant_move{
+    0%{
+        transform: scale(1);
+        top:40%;
+        left:10%;
+        -webkit-animation-timing-function: linear; 
+    }
+    20%{
+        transform: scale(0.9);
+        top:25%;
+        left:30%;
+        -webkit-animation-timing-function: linear; 
+    }
+    40%{
+        transform: scale(1.05);
+        top:50%;
+        left:60%;
+        -webkit-animation-timing-function: linear; 
+    }
+    60%{
+        transform: scale(0.95);
+        top:40%;
+        left:80%;
+        -webkit-animation-timing-function: linear; 
+    }
+    80%{
+        transform: scale(1.1);
+        top:10%;
+        left:50%;
+        -webkit-animation-timing-function: linear; 
+    }
+    100%{
+        transform: scale(1);
+        top:30%;
+        left:20%;
+        -webkit-animation-timing-function: linear; 
+    }
+}
+
+
+@media only screen and (max-width: 1000px) { 
+
+h2{ width: 900px;
+    font-size: 32px;
+    line-height: 20px;
+}
+h3{
+    font-size: 16px;
+}
+h4{
+    width: 700px;
+    font-size: 14px;
+}
+h5{
+    width: 700px;
+    font-size: 12px;
+    line-height: 10px;   
+}
+.box{ 
+    margin-left: 3%;
+}
+}
+
+@media only screen and (max-width: 600px) { 
+
+h2{ width: 500px;
+    font-size: 24px;
+    line-height: 20px;
+}
+h3{
+    font-size: 12px;
+}
+h4{
+    width: 500px;
+    font-size: 8px;
+}
+h5{
+    width: 500px;
+    font-size: 12px;
+    line-height: 10px;
+    
+}
+.box{ 
+    margin-left: 3%;
+}
 }
