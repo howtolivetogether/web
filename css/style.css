@@ -27,7 +27,7 @@ body {
 }
 
 
-.shrink{
+header{
     position: fixed;
     /*width: 900px;*/
     text-align: left;
@@ -38,7 +38,7 @@ body {
     background-color: #fff;
     margin-left: 60px;
     padding-left: 20px;
-    z-index: 200;
+    z-index: 100;
     background-image: url(../img/GRADIENT2.png);
     background-size: 100% 2000px;
     background-repeat: none;
@@ -121,6 +121,18 @@ canvas[resize] {
 img{
 	position: absolute;
 }
+.icon{
+   position: relative;
+   width: 35px;
+   margin-top: 5px;
+   left: 6px;
+   top: 10px;
+   float: left;
+}
+.box_cover{
+    width: 30px;
+    height: 30px; 
+}
 .logo_e{
     z-index: -10;
     width: 100px;
@@ -148,18 +160,18 @@ img{
 }
 .main{
     position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 300;
+    /*background-color: #fff;*/
+    z-index: 200;
+    pointer-events: none;
 }
 .content{
     /*background: #fff;*/
     /*position: fixed;*/
-    /*height: 2000px;*/
+    /*height:    2000px;*/
     width: 100%;
     /*overflow-y: scroll;*/
     padding-top: 200px;
-    z-index: 0;
+    z-index: 300;
 }
 .circle{
     background-image: url(../img/GRADIENT2.png);
@@ -178,7 +190,7 @@ img{
     margin-top: 100px;
     padding-left:100px; 
     min-height: 2000px;
-    z-index: 500;
+    z-index: 200;
 }
 .timeline{
     background-color: #fff;
@@ -302,6 +314,47 @@ footer{
     background-color: #fff;
     border: 2px solid #000;
 }
+
+
+.collapsible{
+  position: fixed;
+  background-color: #fff;
+  border-top: 2px solid #000;
+  color: #000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  
+}
+
+.active, .collapsible:hover{
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: #000;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content_s{
+    background-color: #fff;
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  
+}
+
 @-webkit-keyframes moveimg { 
 	
     
@@ -430,19 +483,28 @@ footer{
         -webkit-animation-timing-function: linear; 
     }
 }
-
+#size_ruler1, .pc{
+    display: block;
+}
+#size_ruler2, .mobile{
+    display: none;
+}
 
 @media only screen and (max-width: 900px) { 
 
-h2{ width: 70%;
-    font-size: 32px;
-    line-height: 20px;
+header{
+    height: 250px;
+    
+}
+h2{ width: 80%;
+    font-size: 36px;
+    line-height: 28px;
 }
 h3{
     font-size: 16px;
 }
 h4{
-    width: 70%
+    width: 80%;
     font-size: 14px;
 }
 h5{
@@ -451,38 +513,62 @@ h5{
     line-height: 10px;   
 }
 .box{ 
-    margin-left: 3%;
+    margin-left: 0%;
 }
 
 footer{
     padding: 10px 15%;
 }
 
+#size_ruler1,#time_ruler, .pc{
+    display: none;
+}
+#size_ruler2, .mobile{
+    display: block;
+}
+.content{
+    padding-top: 250px;
+}
+.wrapper h3{
+    margin-left: 20px;
+    padding-top: 10px;
+}
+.wrapper h3, .tab{
+    margin-top:-105px;
+    margin-bottom: 100px;
+}
+
 }
 
 @media only screen and (max-width: 600px) { 
-
-h2{ width: 70%;
-    font-size: 22px;
-    line-height: 18px;
+header{
+    margin-left: 0px;
+    padding-left: 10%;
+    }
+h2{ 
+    font-size: 28px;
+    line-height: 24px;
 }
+
 h3{
     font-size: 12px;
 }
 h4{
-    width: 70%;
-    font-size: 8px;
+    width: 80%;
+    font-size: 10px;
 }
 h5{
     width: 70%;
-    font-size: 12px;
-    line-height: 10px;
+    font-size: 14px;
+    line-height: 14px;
     
 }
 .box{ 
-    margin-left: 3%;
+    margin-left: 0;
 }
 footer{
     padding: 10px 5%;
 }
+
+
 }
