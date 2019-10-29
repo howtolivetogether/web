@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="How To Live Together">
-    <meta name="keywords" content="We are a group of designers figuring out the everyday. <br>
+    <meta name="keywords" content="We are a group of designers figuring out the everyday. 
     We are 'obliged to care' about what is connected to us and framing this through new perspectives. 
     First of all it is an experience of how to live together.">
     <meta name="author" content="DAE-Information Design">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTLT</title>
+    <title>HTLT - How To Live Together</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.ico">
     <script type="text/javascript" src="js/paper-full.js"></script>
@@ -80,17 +80,31 @@
            });
         });
 
+       
+   
     </script>
 </head>
 <body>
+  <div style="position:fixed; width:50px;">
+    <a href="https://www.instagram.com/howtolivetogether/" class="icon" target="_blank"><img src="img/ig-icon.png" class="icon" ></a>  
+    <a href="https://www.instagram.com/howtolivetogether/" class="icon" target="_blank"><img src="img/fb-icon.png" class="icon" ></a>
+  </div>
+
 <div class="main">
     <svg height="2000" width="2000">
-      <line x1="0" y1="200" x2="2000" y2="200" style="stroke:rgb(0,0,0);stroke-width:5" />
+      <line id="size_ruler1" x1="0" y1="200" x2="2000" y2="200" style="stroke:rgb(0,0,0);stroke-width:5" />
+
+       <line id="size_ruler2" x1="0" y1="250" x2="2000" y2="250" style="stroke:rgb(0,0,0);stroke-width:5" />
     
-      <line id="ruler" x1="60" y1="0" x2="60" y2="2000" style="stroke:rgb(0,0,0);stroke-width:5" />
+      <line id="time_ruler" x1="60" y1="0" x2="60" y2="2000" style="stroke:rgb(0,0,0);stroke-width:5" />
+
+
     </svg>
 
-</div>   
+</div> 
+
+
+
 <header id="navbar" class="shrink">
     <h2 >How To Live Together</h2>
     <h4 >We are a group of designers figuring out the everyday. <br>
@@ -98,6 +112,7 @@
 
     First of all it is an experience of how to live together.<br>
     </h4>
+
 </header>   
 
 
@@ -210,34 +225,50 @@
         </svg>
     </div>
   </div> 
+
+
   <div class="wrapper"> 
     <svg height="210" width="500" class="tab absolute">
       <line x1="0" y1="0" x2="0" y2="50" style="stroke:rgb(0,0,0);stroke-width:8" />
     </svg>
+    
     <h3>small</h3>
     <div class="box">
         <svg height="200" width="200" class="circle c3">
           <circle cx="100" cy="100" r="100" stroke="none" fill="none" stroke-width="1" />
-          <h5>Lorem Ipsum</h5>
+          <h5>observatorium</h5>
+          
           <hr>
-          <p>Why physical connection between human beings matters</p>
+          <p>There is a story behind the dome of the Dr AF Philips observatorium.</p>
+          <button class="collapsible">more</button>
+          <div class="content_s">
+          
+          </div>
         </svg>
     </div>
-    
+
     <div class="box">
         <svg height="200" width="200" class="circle c1">
           <circle cx="100" cy="100" r="100" stroke="none" fill="none" stroke-width="1" />
-          <h5>Lorem Ipsum</h5>
+          <h5>Step in the Arena </h5>
           <hr>
-          <p>Why physical connection between human beings matters</p>
+          <p>Step in the Arena - Graffiti Walls is an alternative live art gallery in Eindhoven open 24/7</p>
+          <button class="collapsible">more</button>
+          <div class="content_s">
+          
+          </div>
+          
         </svg>
     </div>
     <div class="box ">
         <svg height="200" width="200" class="circle c2">
           <circle cx="100" cy="100" r="100" stroke="none" fill="none" stroke-width="1" />
-          <h5>Lorem Ipsum</h5>
+          <h5>food is home</h5>
           <hr>
-          <p>Why physical connection between human beings matters</p>
+          <button class="collapsible">more</button>
+          <div class="content_s">
+          <p>One of the fastest way to feel at home, is by finding out where to eat.</p>
+          </div>
         </svg>
     </div>
     <div class="box ">
@@ -298,7 +329,8 @@
  <!-- <canvas id="canvas" resize ></canvas> -->
  <footer>
      <img src="img/elephant_home.png" class="logo_e_s">
-     <h6>© 2019 HTLT. All Rights Reserved</h6>
+     <h6>© 2019 HTLT.<!--  All Rights Reserved --></h6>
+
  </footer>
 </body>
 </html>
