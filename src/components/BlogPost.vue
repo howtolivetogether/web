@@ -87,7 +87,7 @@ export default {
 .countdown .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 4em;
+  grid-gap: 50%;
   font-size: 4em;
   font-weight: bold;
   position: absolute;
@@ -104,5 +104,11 @@ export default {
 }
 .countdown img {
   position: absolute;
+}
+
+.countdown:hover img {
+  position: absolute;
+  transform: scale(-1, 1);
+  mix-blend-mode: overlay;
 }
 </style>
