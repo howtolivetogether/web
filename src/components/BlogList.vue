@@ -1,8 +1,8 @@
 <template>
-  <section>
+  <section v-bind="$attrs">
     <ul class="list">
       <div>{{ title }}</div>
-      <g-link v-for="post in posts" :key="post.node.title" :to="post.node.path">
+      <g-link v-for="post in [...posts, ...posts, ...posts]" :key="post.node.title" :to="post.node.path">
         <li>
           <div class="hero_image">
             <g-image
@@ -16,7 +16,7 @@
           <div class="blogList__info">
             <h2>{{ post.node.title }}</h2>
             <h3>{{ formatDate(post.node.date) }}</h3>
-            <p v-html="formatExcerpt(post.node.content)"></p>
+            <p v-html="formatExcerpt(post.node.content)" v-if="post.node.content"></p>
           </div>
         </li>
       </g-link>
@@ -77,7 +77,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     padding: 1.5rem 1.25rem;
-    border-bottom: 1px solid #ebebeb;
     h2,
     h3,
     p {

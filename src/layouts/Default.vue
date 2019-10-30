@@ -1,52 +1,38 @@
 <template>
-  <div class="layout">
+  <div class="layout gradient">
     <Header :page="page" />
     <div class="content">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
+import Header from "~/components/Header.vue";
 
-    export default {
-        components: {
-            Header
-        }, 
-        props: {
-          page: {
-              type: String,
-              required: true
-          }
-        }, 
-        
+export default {
+  components: {
+    Header
+  },
+  props: {
+    page: {
+      type: String,
+      required: true
     }
+  }
+};
 </script>
 
 <style>
-  .layout {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-  }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
 
-  .layout .info_page {
-    color: #ebebeb;
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 10% 90%;
   }
-    
-  .content {
-    flex-grow: 1;
-  }
-    
-  @media (min-width: 768px) {
-    .layout {
-      display: block;
-    }
-    .content {
-      flex-grow: none;
-      width: 70vw;
-      margin-left: 30vw;
-    }
-  }
+}
 </style>

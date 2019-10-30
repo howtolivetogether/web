@@ -1,16 +1,12 @@
 <template>
   <header class="header">
-    <nav class="nav">
-      <g-link to="/" exact>
-        <h1>{{ $static.metaData.siteName }}</h1>
-        <p>{{ $static.metaData.siteDescription }}</p>
-      </g-link>
-      <div>
-        <h1>
-          <g-link :to="infoLink">{{ isInfoPage ? "close" : "info" }}</g-link>
-        </h1>
-      </div>
-    </nav>
+    <g-link to="/" exact>
+      <h1>{{ $static.metaData.siteName }}</h1>
+    </g-link>
+    <p>{{ $static.metaData.siteDescription }}</p>
+    <h2>
+      <g-link :to="infoLink">{{ isInfoPage ? "close" : "info" }}</g-link>
+    </h2>
   </header>
 </template>
 
@@ -43,39 +39,34 @@ export default {
 </static-query>
 
 <style>
-.header p {
-  margin-top: 2rem;
-}
-
-.nav {
-  padding: 1.5rem 1.25rem;
+.header {
+  z-index: 1;
+  padding: 10rem;
   border-bottom: 1px solid #ebebeb;
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
 }
 
-.nav img {
-  margin-bottom: 0;
+.header h2 {
+  margin-top: auto;
 }
 
-@media (min-width: 768px) {
-  .header {
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-  }
+.header h1,
+.header a {
+  align-self: flex-start;
+  position: sticky;
+  top: 10rem;
+}
 
-  .nav {
-    padding: 2rem;
-    width: 30vw;
-    height: 100%;
-    border-right: 1px solid #ebebeb;
-    border-bottom: none;
-    flex-direction: column;
-    align-items: flex-start;
+@media (min-width: 700px) {
+  .header h1 {
   }
+}
+
+.header p {
+  padding: 1.5rem 1.25rem;
+  min-width: 20rem;
 }
 </style>

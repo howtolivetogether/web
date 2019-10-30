@@ -6,6 +6,37 @@
   font-weight: normal;
 }
 
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient {
+  background: linear-gradient(
+    -45deg,
+    hsl(321, 67%, 94%),
+    hsl(333, 31%, 93%),
+    hsl(82, 20%, 92%),
+    hsl(106, 38%, 89%),
+    hsl(101, 67%, 89%),
+    hsl(163, 88%, 84%),
+    hsl(26, 100%, 93%),
+    hsl(32, 74%, 93%),
+    hsl(56, 33%, 92%),
+    hsl(157, 78%, 89%)
+  );
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 15s ease infinite;
+  animation: gradientBG 15s ease infinite;
+}
+
 body,
 html {
   font-size: 10px;
@@ -13,7 +44,6 @@ html {
 
 body {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
-  overflow-x: hidden;
   color: #000;
 }
 
@@ -82,7 +112,7 @@ p {
   h1 {
     font-size: 4.8rem;
     letter-spacing: -1px;
-    line-height: 6.6rem;  
+    line-height: 6.6rem;
   }
 
   h2 {

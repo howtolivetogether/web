@@ -1,31 +1,66 @@
 <template>
   <Layout page="home">
+    <div class="hero gradient"></div>
     <div class="tri">
-      <BlogList :posts="$page.focus.edges" />
-      <BlogList :posts="$page.forum.edges" />
-      <BlogList :posts="$page.filter.edges" />
+      <BlogList :posts="$page.focus.edges" class="focus" />
+      <BlogList :posts="$page.forum.edges" class="forum" />
+      <BlogList :posts="$page.filter.edges" class="filter" />
     </div>
   </Layout>
 </template>
 
 <script>
 import BlogList from "~/components/BlogList.vue";
+import Header from "~/components/Header.vue";
 
 export default {
   metaInfo: {
     title: "Home"
   },
   components: {
-    BlogList
+    BlogList,
+    Header
   }
 };
 </script>
 
 <style scoped>
+.hero {
+  height: 100vh;
+  background-size: 70rem 8rem;
+  /* background-image: linear-gradient(to right, black 1rem, transparent 1rem),
+    linear-gradient(to bottom, transparent 1px, transparent 1px); */
+  animation: gradientBG 100s ease infinite;
+}
+
 .tri {
   display: grid;
-  grid-template-columns: 4fr 3fr 2fr;
-  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 10rem;
+  background: white;
+}
+
+.focus {
+  grid-column: span 3;
+}
+
+.forum {
+  grid-column: span 2;
+}
+
+@media (min-width: 1280px) {
+  .tri {
+    grid-template-columns: 4fr 3fr 2fr;
+  }
+
+  .focus {
+    grid-column: auto;
+  }
+
+  .forum {
+    grid-column: auto;
+  }
 }
 </style>
 
@@ -66,7 +101,6 @@ export default {
                     authors
                     date  (format: "MMMM DD YYYY")
                     hero_image (width:1000, quality: 75)
-                    content
                 }
             }
         }
