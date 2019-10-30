@@ -1,6 +1,6 @@
 ---
-date: 2019-10-29T23:00:00Z
-release_date: 2019-10-30T00:45:10Z
+date: 2019-10-29T23:00:00.000+00:00
+release_date: 2019-11-02T00:45:10Z
 title: Alternative DDW Guide
 description: 'A different point of view on the Dutch Design Week event: looking for
   places that create a sense of home in contrast with the sense of displacement that
