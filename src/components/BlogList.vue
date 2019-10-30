@@ -2,47 +2,26 @@
   <section v-bind="$attrs">
     <ul class="list">
       <div>{{ title }}</div>
-      <g-link v-for="post in [...posts, ...posts, ...posts]" :key="post.node.title" :to="post.node.path">
-        <li>
-          <div class="hero_image">
-            <g-image
-              :src="post.node.hero_image"
-              :alt="post.node.title"
-              width="300"
-              height="300"
-              quality="75"
-            ></g-image>
-          </div>
-          <div class="blogList__info">
-            <h2>{{ post.node.title }}</h2>
-            <h3>{{ formatDate(post.node.date) }}</h3>
-            <p v-html="formatExcerpt(post.node.content)" v-if="post.node.content"></p>
-          </div>
-        </li>
+      <g-link v-for="post in posts" :key="post.node.title" :to="post.node.path">
+        <BlogPost v-bind="post.node" />
       </g-link>
     </ul>
   </section>
 </template>
 
 <script>
+import BlogPost from "./BlogPost.vue";
+
 export default {
+  components: {
+    BlogPost,
+  },
   props: {
     posts: {
       type: Array,
       required: true
     }
   },
-  methods: {
-    formatDate(date) {
-      return new Date(date).toDateString().slice(4);
-    },
-    formatExcerpt(excerpt) {
-      const blurb = excerpt.slice(3, 200).trim();
-      return blurb.indexOf("</p>") !== -1
-        ? blurb.slice(0, blurb.indexOf("</p>")).trim() + "..."
-        : blurb + "...";
-    }
-  }
 };
 </script>
 

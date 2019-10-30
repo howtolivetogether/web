@@ -53,20 +53,20 @@ export default {
   margin-top: auto;
 }
 
-.header h1,
-.header a {
-  align-self: flex-start;
-  position: sticky;
-  top: 10rem;
+.header p {
+  font-weight: bold;
 }
 
 @media (min-width: 700px) {
-  .header h1 {
+  .header h1,
+  .header a {
+    align-self: flex-start;
+    position: sticky;
+    top: 10rem;
   }
-}
-
-.header p {
-  padding: 1.5rem 1.25rem;
-  min-width: 20rem;
+  .header p {
+    padding: 1.5rem 1.25rem;
+    min-width: 51rem;
+  }
 }
 </style>

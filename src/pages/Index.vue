@@ -26,17 +26,23 @@ export default {
 
 <style scoped>
 .hero {
-  height: 100vh;
+  height: 10vh;
   background-size: 70rem 8rem;
   /* background-image: linear-gradient(to right, black 1rem, transparent 1rem),
     linear-gradient(to bottom, transparent 1px, transparent 1px); */
   animation: gradientBG 100s ease infinite;
 }
 
+@media (min-width: 768px) {
+  .hero {
+    height: 100vh;
+  }
+}
+
 .tri {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  grid-gap: 5rem;
   padding: 10rem;
   background: white;
 }
@@ -74,6 +80,7 @@ export default {
                     path
                     authors
                     date  (format: "MMMM DD YYYY")
+                    release_date
                     hero_image (width:1000, quality: 75)
                     content
                 }
@@ -87,6 +94,7 @@ export default {
                     path
                     authors
                     date  (format: "MMMM DD YYYY")
+                    release_date
                     hero_image (width:1000, quality: 75)
                     content
                 }
@@ -100,6 +108,7 @@ export default {
                     path
                     authors
                     date  (format: "MMMM DD YYYY")
+                    release_date
                     hero_image (width:1000, quality: 75)
                 }
             }
