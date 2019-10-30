@@ -7,6 +7,13 @@ sections:
 - type: heading
   label: Content
 - type: directory
+  path: src/assets/content/focus
+  label: Focus Posts
+  create: documents
+  match: "**/*"
+  templates:
+  - focus-posts
+- type: directory
   path: src/assets/content/blog
   label: Blog Posts
   create: documents
