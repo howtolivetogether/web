@@ -2,6 +2,17 @@
 label: Focus Posts
 hide_body: false
 fields:
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  hidden: false
+  default: now
 - name: title
   type: text
   config:
@@ -27,15 +38,6 @@ fields:
     display_utc: false
   description: Date when post will be fully shown to visitors
   default: now
-- name: gallery
-  type: image_gallery
-  config: {}
-  label: Gallery
-- name: hero_image
-  type: file
-  config:
-    maxSize: '2'
-  label: Hero Image
 - name: authors
   type: list
   config:
@@ -49,16 +51,14 @@ fields:
       path: authors
   label: Authors
   hidden: false
-- name: date
-  type: datetime
-  label: Date
-  description: ''
+- name: hero_image
+  type: file
   config:
-    required: true
-    date_format: 
-    time_format: 
-    display_utc: false
-  hidden: false
-  default: now
+    maxSize: '2'
+  label: Hero Image
+- name: gallery
+  type: image_gallery
+  config: {}
+  label: Gallery
 pages:
 - src/assets/content/focus/alternative-ddw-guide.md
