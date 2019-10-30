@@ -58,7 +58,7 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
-  hidden: true
+  hidden: false
   default: now
 pages:
 - src/assets/content/focus/alternative-ddw-guide.md
