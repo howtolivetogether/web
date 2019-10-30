@@ -36,5 +36,18 @@ fields:
   config:
     maxSize: '2'
   label: Hero Image
+- name: authors
+  type: list
+  config:
+    use_select: true
+    min: '1'
+    max: 
+    source:
+      type: documents
+      section: authors-list
+      file: src/assets/content/data/authors.json
+      path: authors
+  label: Authors
+  hidden: false
 pages:
 - src/assets/content/focus/alternative-ddw-guide.md
