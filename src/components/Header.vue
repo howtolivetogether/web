@@ -1,9 +1,9 @@
 <template>
   <header class="header">
     <g-link to="/" exact>
-      <h1>{{ $static.metaData.siteName }}</h1>
+      <h1>{{ title || $static.metaData.siteName }}</h1>
     </g-link>
-    <p>{{ $static.metaData.siteDescription }}</p>
+    <p>{{ description || $static.metaData.siteDescription }}</p>
     <h2>
       <g-link :to="infoLink">{{ isInfoPage ? "close" : "info" }}</g-link>
     </h2>
@@ -16,7 +16,9 @@ export default {
     page: {
       type: String,
       required: true
-    }
+    },
+    title: String,
+    description: String
   },
   computed: {
     isInfoPage() {

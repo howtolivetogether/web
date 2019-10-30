@@ -1,6 +1,6 @@
 <template>
   <div class="layout gradient">
-    <Header :page="page" />
+    <Header :page="page" :title="title" :description="description" />
     <div class="content">
       <slot />
     </div>
@@ -18,7 +18,9 @@ export default {
     page: {
       type: String,
       required: true
-    }
+    },
+    title: String,
+    description: String
   }
 };
 </script>
