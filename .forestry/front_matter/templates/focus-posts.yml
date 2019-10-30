@@ -1,4 +1,38 @@
 ---
 label: Focus Posts
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  hidden: false
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Description
+- name: release_date
+  type: datetime
+  label: Release Date
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  description: Date when post will be fully shown to visitors
+  default: now
+- name: gallery
+  type: image_gallery
+  config: {}
+  label: Gallery
+- name: hero_image
+  type: file
+  config:
+    maxSize: '2'
+  label: Hero Image
