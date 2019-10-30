@@ -11,7 +11,7 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
-  hidden: false
+  hidden: true
   default: now
 - name: title
   type: text
