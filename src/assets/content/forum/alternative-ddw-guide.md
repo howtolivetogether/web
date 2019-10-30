@@ -1,4 +1,5 @@
 ---
+date: 2019-10-29T23:00:00Z
 release_date: 2019-10-30T00:45:10Z
 title: Alternative DDW Guide
 description: 'A different point of view on the Dutch Design Week event: looking for
@@ -6,6 +7,10 @@ description: 'A different point of view on the Dutch Design Week event: looking 
   caracterizes temporary festivals.'
 gallery: []
 hero_image: "/src/assets/content/images/alternative guide.jpg"
+authors:
+- Soyoun
+- Elias
+- Martina
 
 ---
 **In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.**  
