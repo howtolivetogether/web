@@ -36,3 +36,5 @@ fields:
   config:
     maxSize: '2'
   label: Hero Image
+pages:
+- src/assets/content/focus/alternative-ddw-guide.md
