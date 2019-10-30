@@ -11,7 +11,13 @@
         </div>
         <div class="blog__body" v-html="$page.post.content"></div>
         <div class="blog__footer">
-          <h2>Written By: {{ $page.post.author }}</h2>
+          <h2>
+            Written By:
+            <span
+              v-for="(author, index) in $page.post.authors"
+              :key="author"
+            >{{ author + (index !== $page.post.authors.length -1 ? ',' : '')}}</span>
+          </h2>
           <g-link :to="nextBlogPath">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -169,6 +175,11 @@ query geFocusData ($path: String!) {
   margin: 0 auto;
   h2 {
     margin-bottom: 0;
+    span {
+      margin-left: 0.5rem;
+      font-family: "Montserrat";
+      text-transform: capitalize;
+    }
   }
   a {
     display: flex;
