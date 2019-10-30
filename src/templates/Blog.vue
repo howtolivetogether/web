@@ -51,7 +51,7 @@ query getPostData ($path: String!) {
         content
         hero_image (quality: 80)
     }
-    all: allBlog {
+    all: allFocus {
         edges {
             node {
                 path
