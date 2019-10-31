@@ -60,8 +60,8 @@ fields:
   type: file
   config:
     maxSize: '5'
-  label: Main Image/Video
-  description: Video or image
+  label: Main Media (Local Image/Video)
+  description: Local video or image
   showOnly:
     field: video_source
     value: file
