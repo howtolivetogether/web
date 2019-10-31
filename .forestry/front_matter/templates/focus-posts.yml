@@ -60,18 +60,40 @@ fields:
   type: image_gallery
   config: {}
   label: Gallery
+- name: video_source
+  type: select
+  default: none
+  config:
+    required: true
+    options:
+    - none
+    - file
+    - link
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Video Source
+  description: Either no video, a file or a link
 - name: main_media
   type: file
   config:
     maxSize: '5'
   label: Main Media
   description: Video or image
+  showOnly:
+    field: video_source
+    value: file
 - name: video
   type: text
   config:
     required: false
   label: Video
   description: Support Raw URL, Youtube and Vimeo Links
+  showOnly:
+    field: video_source
+    value: link
 pages:
 - content/filter/step-in-the-arena.md
 - content/filter/observatorium.md
