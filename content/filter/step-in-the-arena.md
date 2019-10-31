@@ -11,6 +11,8 @@ authors:
 thumbnail: "/content/images/graffiti.jpg"
 gallery: []
 main_media: "/content/images/graffiti.mp4"
+media_type: file
+main_external_video: ''
 
 ---
 **In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.**  
