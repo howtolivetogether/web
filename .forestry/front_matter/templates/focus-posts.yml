@@ -38,11 +38,12 @@ fields:
     schema:
       format: markdown
   label: Description
-- name: hero_image
+- name: thumbnail
   type: file
   config:
-    maxSize: '2'
-  label: Hero Image
+    maxSize: '5'
+  label: Thumbnail
+  description: Thumbnail Image (NOT a video and less than 5mb)
 - name: video_source
   type: select
   default: none
