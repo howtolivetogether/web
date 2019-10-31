@@ -27,13 +27,6 @@ sections:
   match: "**/*"
   templates:
   - focus-posts
-- type: directory
-  path: content/blog
-  label: Blog Posts
-  create: documents
-  match: "**/*"
-  templates:
-  - blog-post
 - type: document
   path: content/data/authors.json
   label: Authors List
