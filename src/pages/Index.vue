@@ -48,9 +48,9 @@ export default {
     const categories = ["focus", "forum", "filter"];
     const actives = ref(categories);
     return {
-      social: parent.$page.metaData.infoData.contact,
-      title: parent.$page.metaData.siteName,
-      subtitle: parent.$page.metaData.siteDescription,
+      social: parent.$page.metadata.infoData.contact,
+      title: parent.$page.metadata.siteName,
+      subtitle: parent.$page.metadata.siteDescription,
       categories,
       active: category => (actives.value = category ? [category] : categories),
       posts: computed(() =>
@@ -68,7 +68,7 @@ export default {
 
 <page-query>
 query {
-  metaData {
+  metadata {
     siteName
     siteDescription
     infoData {
