@@ -38,13 +38,7 @@ fields:
     schema:
       format: markdown
   label: Description
-- name: thumbnail
-  type: file
-  config:
-    maxSize: '5'
-  description: Must be an image (.png, .jpg, .gif, < 5mb)
-  label: Thumbnail
-- name: video_source
+- name: media_type
   type: select
   default: none
   config:
@@ -58,8 +52,8 @@ fields:
       section: 
       file: 
       path: 
-  label: Video Source
-  description: Either no video, a file or a link
+  label: Main Media Type
+  description: Either an image file, a video file or an external video link
 - name: main_media
   type: file
   config:
