@@ -5,7 +5,7 @@
     <nav>
       <span @click="$router.go(-1)">X</span>
     </nav>
-    <g-image :src="hero_image" :alt="title" />
+    <g-image :src="thumbnail" :alt="title" />
     <p v-html="content"></p>
   </article>
 </template>
@@ -27,7 +27,7 @@ query ($path: String!) {
     date (format: "MMMM DD YYYY")
     authors
     content
-    hero_image (quality: 80)
+    thumbnail (quality: 80)
   }
   all: allFilter {
     edges {

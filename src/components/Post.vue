@@ -1,6 +1,6 @@
 <template>
   <g-link :to="path" tag="article" class="post released" v-if="released">
-    <g-image :src="hero_image" :alt="title" height="300" width="300"></g-image>
+    <g-image :src="thumbnail" :alt="title" height="300" width="300"></g-image>
     <h2>{{ title }}</h2>
     <h3>{{ short_date }}</h3>
     <hr />
@@ -13,7 +13,7 @@
       </div>
       <g-image src="../assets/images/elephant_home.png" height="300" width="300" />
     </div>
-    <h2>Comming Soon</h2>
+    <h2>Coming Soon</h2>
   </article>
 </template>
 
@@ -21,7 +21,7 @@
 import { computed, ref } from "@vue/composition-api";
 
 export default {
-  props: ["hero_image", "title", "release_date", "date", "description", "path"],
+  props: ["thumbnail", "title", "release_date", "date", "description", "path"],
   setup(props) {
     const currentTime = ref(new Date().getTime());
     setInterval(() => (currentTime.value = new Date().getTime()), 1000);

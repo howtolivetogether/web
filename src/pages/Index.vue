@@ -92,7 +92,7 @@ query {
         authors
         date  (format: "MMMM DD YYYY")
         release_date
-        hero_image (width:1000, quality: 75)
+        thumbnail (width:1000, quality: 75)
         description
       }
     }

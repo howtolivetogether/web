@@ -8,7 +8,7 @@ authors:
 - Elias
 - Martina
 - Soyoun
-hero_image: "/content/images/graffiti.jpg"
+thumbnail: "/content/images/graffiti.jpg"
 gallery: []
 main_media: "/content/images/graffiti.mp4"
 

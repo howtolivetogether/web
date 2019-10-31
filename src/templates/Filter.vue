@@ -5,7 +5,10 @@
     <nav>
       <span @click="$router.go(-1)">X</span>
     </nav>
-    <g-image :src="hero_image" :alt="title" />
+    <video controls autoplay muted v-if="main_video">
+      <source :src="main_video.src" :type="main_video.mimeType" />
+    </video>
+    <g-image :src="thumbnail" :alt="title" v-else />
     <p v-html="content"></p>
   </article>
 </template>
@@ -14,7 +17,11 @@
 export default {
   setup(props, { parent }) {
     return {
-      ...parent.$page.post
+      ...parent.$page.post,
+      main_video:
+        parent.$page.post.main_media &&
+        parent.$page.post.main_media.mimeType.includes("video") &&
+        parent.$page.post.main_media
     };
   }
 };
@@ -27,7 +34,8 @@ query ($path: String!) {
     date (format: "MMMM DD YYYY")
     authors
     content
-    hero_image (quality: 80)
+    thumbnail (quality: 80)
+    main_media
   }
   all: allFilter {
     edges {
@@ -69,7 +77,7 @@ nav span {
   line-height: 6rem;
   transform: scale(2, 1);
   margin-right: 2rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   cursor: pointer;
 }
 
@@ -77,7 +85,8 @@ h1 {
   grid-area: title;
 }
 
-img {
+img,
+video {
   grid-area: image;
   height: 100%;
   width: 100%;

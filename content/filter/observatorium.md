@@ -7,7 +7,6 @@ authors:
 - Elias
 - Martina
 - Soyoun
-hero_image: "/content/images/observatory.jpg"
 gallery: []
 media_type: none
 main_media: ''

@@ -6,7 +6,7 @@ description: 'A different point of view on the Dutch Design Week event: looking 
   places that create a sense of home in contrast with the sense of displacement that
   caracterizes temporary festivals.'
 gallery: []
-hero_image: "/content/images/alternative guide.jpg"
+thumbnail: "/content/images/alternative guide.jpg"
 authors:
 - Soyoun
 - Elias
