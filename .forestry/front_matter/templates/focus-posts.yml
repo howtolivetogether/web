@@ -60,6 +60,12 @@ fields:
   type: image_gallery
   config: {}
   label: Gallery
+- name: main_media
+  type: file
+  config:
+    maxSize: '5'
+  label: Main Media
+  description: Video or image
 pages:
 - content/focus/alternative-ddw-guide.md
 - content/filter/step-in-the-arena.md
