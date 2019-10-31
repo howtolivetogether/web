@@ -72,6 +72,12 @@ fields:
   showOnly:
     field: video_source
     value: link
+- name: thumbnail
+  type: file
+  config:
+    maxSize: '3'
+  label: Thumbnail
+  description: Image or video file used to preview the post, also known as a thumbnail
 pages:
 - content/filter/step-in-the-arena.md
 - content/filter/observatorium.md
