@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@font-face {
+  font-family: "BRRR";
+  src: url("./fonts/BRRR-Medium.otf") format("opentype");
+  font-weight: normal;
+}
+
+:root {
+  --filet: 2px solid #000;
+  --main-bg-gradient: linear-gradient(
+    -45deg,
+    hsl(321, 67%, 94%),
+    hsl(333, 31%, 93%),
+    hsl(82, 20%, 92%),
+    hsl(106, 38%, 89%),
+    hsl(101, 67%, 89%),
+    hsl(163, 88%, 84%),
+    hsl(26, 100%, 93%),
+    hsl(32, 74%, 93%),
+    hsl(56, 33%, 92%),
+    hsl(157, 78%, 89%)
+  );
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 900px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+h1,
+h2 {
+  font-family: "BRRR", "Montserrat", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+p {
+  max-width: 66rem;
+}
+
+p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+hr {
+  border: none;
+  border-bottom: var(--filet);
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient {
+  background: var(--main-bg-gradient);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}

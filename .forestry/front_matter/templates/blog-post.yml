@@ -14,7 +14,7 @@ fields:
     source:
       type: documents
       section: authors-list
-      file: src/assets/content/data/authors.json
+      file: content/data/authors.json
       path: authors
   label: Author
   description: Choose author, to add a new author go to the Authors List file
@@ -25,8 +25,8 @@ fields:
   name: hero_image
   label: hero_image
 pages:
-- src/assets/content/blog/ne-te-quaesiveris-extra.md
-- src/assets/content/blog/on-the-geneology-of-morals.md
-- src/assets/content/blog/an-essay-on-walking.md
-- src/assets/content/blog/sunflower-sutra.md
-- src/assets/content/blog/song-of-myself.md
+- content/blog/ne-te-quaesiveris-extra.md
+- content/blog/on-the-geneology-of-morals.md
+- content/blog/an-essay-on-walking.md
+- content/blog/sunflower-sutra.md
+- content/blog/song-of-myself.md

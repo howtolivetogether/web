@@ -1,245 +1,113 @@
 <template>
-  <Layout page="blog" :title="' '" :description="' '">
-    <article class="blog">
-      <figure class="blog__hero">
-        <g-image :src="$page.post.hero_image" :alt="$page.post.title"></g-image>
-      </figure>
-      <div>
-        <div class="blog__info">
-          <h1>{{ $page.post.title }}</h1>
-          <h3>{{ $page.post.date }}</h3>
-        </div>
-        <div class="blog__body" v-html="$page.post.content"></div>
-        <div class="blog__footer">
-          <h2>
-            Written By:
-            <span
-              v-for="(author, index) in $page.post.authors"
-              :key="author"
-            >{{ author + (index !== $page.post.authors.length -1 ? ',' : '')}}</span>
-          </h2>
-          <g-link :to="nextBlogPath">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 26 26"
-              enable-background="new 0 0 26 26"
-            >
-              <path
-                d="M23.021,12.294l-8.714-8.715l-1.414,1.414l7.007,7.008H2.687v2h17.213l-7.007,7.006l1.414,1.414l8.714-8.713  C23.411,13.317,23.411,12.685,23.021,12.294z"
-              />
-            </svg>
-          </g-link>
-        </div>
-      </div>
-    </article>
-  </Layout>
+  <article>
+    <h1>{{ title }}</h1>
+    <hr :class="`hr${x}`" v-for="x in 3" :key="x" :style="`grid-area: hr${x}`" />
+    <nav>
+      <span @click="$router.go(-1)">X</span>
+    </nav>
+    <g-image :src="hero_image" :alt="title" />
+    <p v-html="content"></p>
+  </article>
 </template>
 
 <script>
 export default {
-  metaInfo() {
+  setup(props, { parent }) {
     return {
-      title: this.$page.post.title
+      ...parent.$page.post
     };
-  },
-  computed: {
-    nextBlogPath: function() {
-      const allBlogs = this.$page.all.edges;
-      const firstBlogPath = allBlogs[0].node.path;
-      const currentBlog = allBlogs.filter(
-        node => node.node.title === this.$page.post.title
-      );
-      function isNull(item) {
-        return item == null || item == undefined;
-      }
-      return isNull(currentBlog[0].next)
-        ? firstBlogPath
-        : currentBlog[0].next.path;
-    }
   }
 };
 </script>
 
 <page-query>
-query geFocusData ($path: String!) {
-    post: filter(path: $path) {
+query ($path: String!) {
+  post: filter(path: $path) {
+    title
+    date (format: "MMMM DD YYYY")
+    authors
+    content
+    hero_image (quality: 80)
+  }
+  all: allFilter {
+    edges {
+      node {
+        path
         title
-        date (format: "MMMM DD YYYY")
-        authors
-        content
-        hero_image (quality: 80)
+      }
+      next {
+        path
+      }
     }
-    all: allFilter {
-        edges {
-            node {
-                path
-                title
-            }
-            next {
-                path
-            }
-        }
-    }
+  }
 }
-
 </page-query>
 
-<style lang="scss" >
-.blog {
-  background: white;
-  h1 {
-    margin-bottom: 0.7rem;
-  }
+<style scoped>
+article {
+  margin: 1rem;
+  min-height: calc(100vh - 2rem);
+  display: grid;
+  grid-gap: 2.5rem;
+  grid-template-areas:
+    "title ."
+    "hr1 hr1"
+    "image image"
+    "content content";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 2px 400px 1fr;
 }
 
-.blog__hero {
-  overflow: hidden;
-  min-height: 300px;
-  height: 60vh;
-  width: 100%;
-  margin: 0;
-  img {
-    min-width: 100%;
-    min-height: 100%;
-    margin-bottom: 0;
-    object-fit: cover;
-  }
-}
-
-.blog__info {
-  text-align: center;
-  padding: 1.5rem 1.25rem;
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-  h1 {
-    margin-bottom: 0.66rem;
-  }
-  h3 {
-    margin-bottom: 0;
-  }
-}
-
-.blog__body {
-  width: 100%;
-  padding: 0 1.25rem;
-  margin: 0 auto;
+nav {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  a {
-    padding-bottom: 1.45rem;
-  }
-  :last-child {
-    margin-bottom: 0;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: normal;
-    padding: 1.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-  p {
-    color: #464646;
-    font-weight: normal;
-    img {
-      margin: 1rem 0;
-    }
-  }
-  ul {
-    list-style: initial;
-  }
-  ul,
-  ol {
-    margin-left: 1.25rem;
-    margin-bottom: 1.25rem;
-    padding-left: 1.45rem;
-  }
-}
-
-.blog__footer {
-  display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 1.5rem 1.25rem;
+}
+
+nav span {
+  font-size: 7rem;
+  line-height: 6rem;
+  transform: scale(2, 1);
+  margin-right: 2rem;
+  margin-top: .5rem;
+  cursor: pointer;
+}
+
+h1 {
+  grid-area: title;
+}
+
+img {
+  grid-area: image;
+  height: 100%;
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  h2 {
-    margin-bottom: 0;
-    span {
-      margin-left: 0.5rem;
-      font-family: "Montserrat";
-      text-transform: capitalize;
-    }
-  }
-  a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    svg {
-      width: 20px;
-    }
-  }
+  object-fit: cover;
+}
+
+p {
+  grid-area: content;
+  columns: 2;
+}
+
+.hr2,
+.hr3 {
+  display: none;
 }
 
 @media (min-width: 768px) {
-  .blog {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
-    padding: 10em;
+  article {
+    grid-template-areas:
+      "title hr2 ."
+      "hr1 hr2 hr3"
+      "image hr2 content";
+    grid-template-rows: auto 2px 1fr;
+    grid-template-columns: 1fr 2px 1fr;
   }
-  .blog__body {
-    max-width: 800px;
-    padding: 0 2rem;
-    span {
-      width: 100%;
-      margin: 1.5rem auto;
-    }
-    ul,
-    ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-  }
-  .blog__hero {
-    min-height: 600px;
-    height: 75vh;
-    img {
-      min-width: 100%;
-    }
-  }
-  .blog__info {
-    text-align: center;
-    padding: 2rem 0;
-    h1 {
-      max-width: 500px;
-      margin: 0 auto 0.66rem auto;
-    }
-  }
-  .blog__footer {
-    padding: 2.25rem;
-  }
-}
 
-@media (min-width: 1440px) {
-  .blog__hero {
-    height: 70vh;
-  }
-  .blog__info {
-    padding: 3rem 0;
-  }
-  .blog__footer {
-    padding: 2rem 2rem 3rem 2rem;
+  .hr2,
+  .hr3 {
+    display: block;
+    border-right: var(--filet);
   }
 }
 </style>

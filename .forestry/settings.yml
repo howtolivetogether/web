@@ -7,46 +7,46 @@ sections:
 - type: heading
   label: Content
 - type: directory
-  path: src/assets/content/focus
+  path: content/focus
   label: Focus Posts
   create: documents
   match: "**/*"
   templates:
   - focus-posts
 - type: directory
-  path: src/assets/content/filter
+  path: content/filter
   label: Filter Posts
   create: documents
   match: "**/*"
   templates:
   - focus-posts
 - type: directory
-  path: src/assets/content/forum
+  path: content/forum
   label: Forum Posts
   create: documents
   match: "**/*"
   templates:
   - focus-posts
 - type: directory
-  path: src/assets/content/blog
+  path: content/blog
   label: Blog Posts
   create: documents
   match: "**/*"
   templates:
   - blog-post
 - type: document
-  path: src/assets/content/data/authors.json
+  path: content/data/authors.json
   label: Authors List
 - type: document
-  path: src/assets/content/data/info.json
+  path: content/data/info.json
   label: Info Page
 - type: heading
   label: Config
 - type: document
-  path: src/assets/content/data/config.json
+  path: content/data/config.json
   label: Site Config
-upload_dir: src/assets/content/images
-public_path: "/src/assets/content/images"
+upload_dir: content/images
+public_path: "/content/images"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"

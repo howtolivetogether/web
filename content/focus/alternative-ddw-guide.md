@@ -1,17 +1,18 @@
 ---
-date: 2019-10-30T04:08:34Z
-release_date: 2019-10-30T04:08:34Z
-title: Observatorium
-description: There is a story behind the dome of the Dr AF Philips observatorium.
+date: 2019-10-29T23:00:00Z
+release_date: 2019-10-30T00:45:10.000+00:00
+title: Alternative DDW Guide
+description: 'A different point of view on the Dutch Design Week event: looking for
+  places that create a sense of home in contrast with the sense of displacement that
+  caracterizes temporary festivals.'
+gallery: []
+hero_image: "/content/images/alternative guide.jpg"
 authors:
+- Soyoun
 - Elias
 - Martina
-- Soyoun
-hero_image: "/src/assets/content/images/observatory.jpg"
-gallery: []
 
 ---
-
 **In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.**  
   
 A team led by Dr. H.B. Lui of the National Institute of Science and Technology in Beijing announced the discovery Friday on the journal Nature Scientific Reports.  

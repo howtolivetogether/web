@@ -1,16 +1,17 @@
 ---
-date: 2019-10-29T23:00:00.000+00:00
-release_date: 2019-10-30T00:45:10.000+00:00
-title: Food is Home
-description: One of the fastest way to feel at home, is by finding out where to eat.
-gallery: []
-hero_image: "/src/assets/content/images/food.jpg"
+date: 2019-10-30T04:08:34Z
+release_date: 2019-10-30T04:08:34Z
+title: Observatorium
+description: There is a story behind the dome of the Dr AF Philips observatorium.
 authors:
-- Soyoun
 - Elias
 - Martina
+- Soyoun
+hero_image: "/content/images/observatory.jpg"
+gallery: []
 
 ---
+
 **In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.**  
   
 A team led by Dr. H.B. Lui of the National Institute of Science and Technology in Beijing announced the discovery Friday on the journal Nature Scientific Reports.  

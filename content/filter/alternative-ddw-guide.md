@@ -1,12 +1,10 @@
 ---
 date: 2019-10-29T23:00:00.000+00:00
-release_date: 2019-11-02T00:45:10Z
-title: Alternative DDW Guide
-description: 'A different point of view on the Dutch Design Week event: looking for
-  places that create a sense of home in contrast with the sense of displacement that
-  caracterizes temporary festivals.'
+release_date: 2019-10-30T00:45:10.000+00:00
+title: Food is Home
+description: One of the fastest way to feel at home, is by finding out where to eat.
 gallery: []
-hero_image: "/src/assets/content/images/alternative guide.jpg"
+hero_image: "/content/images/food.jpg"
 authors:
 - Soyoun
 - Elias

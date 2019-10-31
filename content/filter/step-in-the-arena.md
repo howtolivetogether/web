@@ -1,16 +1,15 @@
 ---
-date: 2019-10-29T23:00:00Z
-release_date: 2019-10-30T00:45:10.000+00:00
-title: Alternative DDW Guide
-description: 'A different point of view on the Dutch Design Week event: looking for
-  places that create a sense of home in contrast with the sense of displacement that
-  caracterizes temporary festivals.'
-gallery: []
-hero_image: "/src/assets/content/images/alternative guide.jpg"
+date: 2019-10-30T04:07:05Z
+release_date: 2019-10-30T04:07:05Z
+title: Step in the Arena
+description: Step in the Arena - Graffiti Walls is an alternative live art gallery
+  in Eindhoven open 24/7
 authors:
-- Soyoun
 - Elias
 - Martina
+- Soyoun
+hero_image: "/content/images/graffiti.jpg"
+gallery: []
 
 ---
 **In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.**  

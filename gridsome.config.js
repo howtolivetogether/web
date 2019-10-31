@@ -1,5 +1,5 @@
-const config = require("./src/assets/content/data/config.json");
-const infoData = require("./src/assets/content/data/info.json");
+const config = require("./content/data/config.json");
+const infoData = require("./content/data/info.json");
 
 module.exports = {
   siteName: config.title,
@@ -17,8 +17,28 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
+        typeName: "Post",
+        baseDir: "./content/",
+        path: "**/*.md",
+        resolveAbsolutePaths: true,
+        remark: {
+          externalLinksTarget: "_blank",
+          externalLinksRel: ["nofollow", "noopener", "noreferrer"]
+        }
+      }
+    },
+    {
+      use: '@zefman/gridsome-source-instagram',
+      options: {
+        username: 'howtolivetogether',
+        typeName: 'InstagramPhoto'
+      }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
         typeName: "Filter",
-        baseDir: "./src/assets/content/",
+        baseDir: "./content/",
         path: "filter/**/*.md",
         resolveAbsolutePaths: true,
         remark: {
@@ -31,7 +51,7 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Focus",
-        baseDir: "./src/assets/content/",
+        baseDir: "./content/",
         path: "focus/**/*.md",
         resolveAbsolutePaths: true,
         remark: {
@@ -44,7 +64,7 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Forum",
-        baseDir: "./src/assets/content/",
+        baseDir: "./content/",
         path: "forum/**/*.md",
         resolveAbsolutePaths: true,
         remark: {

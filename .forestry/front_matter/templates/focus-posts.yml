@@ -47,7 +47,7 @@ fields:
     source:
       type: documents
       section: authors-list
-      file: src/assets/content/data/authors.json
+      file: content/data/authors.json
       path: authors
   label: Authors
   hidden: false
@@ -61,6 +61,6 @@ fields:
   config: {}
   label: Gallery
 pages:
-- src/assets/content/focus/alternative-ddw-guide.md
-- src/assets/content/filter/observatorium.md
-- src/assets/content/filter/step-in-the-arena.md
+- content/focus/alternative-ddw-guide.md
+- content/filter/step-in-the-arena.md
+- content/filter/observatorium.md
