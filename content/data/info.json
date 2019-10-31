@@ -1,11 +1,13 @@
 {
-  "description": "<p>This blog was created using <a href=\"https://forestry.io/\" title=\"Forestry Link\">Forestry</a> &amp; <a href=\"https://gridsome.org/\" title=\"Gatsby Link\">Gridsome</a></p>",
-  "cta": "<p>To get started, import this site into Forestry or checkout the repository <a href=\"https://github.com/kendallstrautman/starter-blog-gatsby\" title=\"Repo Url\">here</a>.</p>",
+  "description": "<p>2019 — Master Information Design,  Design Academy Eindhoven </p>",
+  "cta": "<p></p>",
   "contact": {
     "email": "mailto:daeinfodesign@gmail.com",
     "instagram": "https://www.instagram.com/howtolivetogether/",
     "vimeo": "https://vimeo.com/369140084",
-    "github": "https://github.com/howtolivetogether/"
+    "github": "https://github.com/howtolivetogether/",
+    "twitter_handle": "",
+    "github_handle": ""
   },
   "background_color": "#B1BCBC",
   "text_color": "#ebebeb"
