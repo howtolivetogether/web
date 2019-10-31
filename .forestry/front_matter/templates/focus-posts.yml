@@ -38,12 +38,12 @@ fields:
     schema:
       format: markdown
   label: Description
-- name: thumbnail
+- name: main_image
   type: file
   config:
     maxSize: '5'
-  label: Thumbnail
   description: Must be an image (.png, .jpg, .gif, < 5mb)
+  label: Main Image
 - name: video_source
   type: select
   default: none
