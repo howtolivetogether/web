@@ -78,19 +78,6 @@ fields:
   showOnly:
     field: video_source
     value: link
-- name: authors
-  type: list
-  config:
-    use_select: true
-    min: '1'
-    max: 
-    source:
-      type: documents
-      section: authors-list
-      file: content/data/authors.json
-      path: authors
-  label: Authors
-  hidden: false
 pages:
 - content/filter/step-in-the-arena.md
 - content/filter/observatorium.md
