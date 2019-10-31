@@ -13,6 +13,16 @@ fields:
     display_utc: false
   hidden: true
   default: now
+- name: release_date
+  type: datetime
+  label: Release Date
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  description: Date when post will be fully shown to visitors
+  default: now
 - name: title
   type: text
   config:
@@ -28,38 +38,11 @@ fields:
     schema:
       format: markdown
   label: Description
-- name: release_date
-  type: datetime
-  label: Release Date
-  config:
-    required: true
-    date_format: 
-    time_format: 
-    display_utc: false
-  description: Date when post will be fully shown to visitors
-  default: now
-- name: authors
-  type: list
-  config:
-    use_select: true
-    min: '1'
-    max: 
-    source:
-      type: documents
-      section: authors-list
-      file: content/data/authors.json
-      path: authors
-  label: Authors
-  hidden: false
 - name: hero_image
   type: file
   config:
     maxSize: '2'
   label: Hero Image
-- name: gallery
-  type: image_gallery
-  config: {}
-  label: Gallery
 - name: video_source
   type: select
   default: none
@@ -94,6 +77,19 @@ fields:
   showOnly:
     field: video_source
     value: link
+- name: authors
+  type: list
+  config:
+    use_select: true
+    min: '1'
+    max: 
+    source:
+      type: documents
+      section: authors-list
+      file: content/data/authors.json
+      path: authors
+  label: Authors
+  hidden: false
 pages:
 - content/filter/step-in-the-arena.md
 - content/filter/observatorium.md
