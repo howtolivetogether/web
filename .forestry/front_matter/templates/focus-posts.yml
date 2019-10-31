@@ -1,5 +1,5 @@
 ---
-label: Focus Posts
+label: Post
 hide_body: false
 fields:
 - name: date
@@ -67,6 +67,6 @@ fields:
   label: Main Media
   description: Video or image
 pages:
-- content/focus/alternative-ddw-guide.md
-- content/filter/observatorium.md
 - content/filter/step-in-the-arena.md
+- content/filter/observatorium.md
+- content/focus/alternative-ddw-guide.md
