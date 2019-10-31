@@ -66,6 +66,12 @@ fields:
     maxSize: '5'
   label: Main Media
   description: Video or image
+- name: video
+  type: text
+  config:
+    required: false
+  label: Video
+  description: Support Raw URL, Youtube and Vimeo Links
 pages:
 - content/filter/step-in-the-arena.md
 - content/filter/observatorium.md
