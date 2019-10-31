@@ -53,7 +53,8 @@ fields:
       file: 
       path: 
   label: Main Media Type
-  description: Either an image file, a video file or an external video link
+  description: Either an image file, a video file or an external video link, used
+    as the main featured media content.
 - name: main_media
   type: file
   config:
