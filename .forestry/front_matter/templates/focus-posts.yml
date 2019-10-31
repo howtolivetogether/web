@@ -65,7 +65,7 @@ fields:
   showOnly:
     field: video_source
     value: file
-- name: main_video
+- name: main_external_video
   type: text
   config:
     required: false
