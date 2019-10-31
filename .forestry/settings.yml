@@ -28,9 +28,6 @@ sections:
   templates:
   - focus-posts
 - type: document
-  path: content/data/authors.json
-  label: Authors List
-- type: document
   path: content/data/info.json
   label: Info Page
 - type: heading
