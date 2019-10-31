@@ -1,7 +1,7 @@
 ---
 date: 2019-10-29T23:00:00.000+00:00
-release_date: 2019-11-02T00:45:10Z
-title: Alternative DDW Guide
+release_date: 2019-11-02T00:45:10.000+00:00
+title: This post will be revealed on 11/2/19
 description: 'A different point of view on the Dutch Design Week event: looking for
   places that create a sense of home in contrast with the sense of displacement that
   caracterizes temporary festivals.'
