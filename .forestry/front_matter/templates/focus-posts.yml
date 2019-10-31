@@ -63,7 +63,7 @@ fields:
   label: Main Media (Local Image/Video)
   description: Local video or image
   showOnly:
-    field: video_source
+    field: media_type
     value: file
 - name: main_external_video
   type: text
@@ -72,7 +72,7 @@ fields:
   label: Main External Video
   description: Support Raw URL, Youtube and Vimeo Links
   showOnly:
-    field: video_source
+    field: media_type
     value: link
 - name: thumbnail
   type: file
