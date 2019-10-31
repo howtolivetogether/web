@@ -50,7 +50,7 @@ export default {
     return {
       social: parent.$page.metadata.infoData.contact,
       title: parent.$page.metadata.siteName,
-      subtitle: parent.$page.metadata.siteDescription,
+      subtitle: parent.$page.metadata.infoData.description,
       categories,
       active: category => (actives.value = category ? [category] : categories),
       posts: computed(() =>
@@ -70,8 +70,8 @@ export default {
 query {
   metadata {
     siteName
-    siteDescription
     infoData {
+      description
       contact {
         email
         instagram
