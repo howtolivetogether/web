@@ -38,12 +38,12 @@ fields:
     schema:
       format: markdown
   label: Description
-- name: main_image
+- name: thumbnail
   type: file
   config:
     maxSize: '5'
   description: Must be an image (.png, .jpg, .gif, < 5mb)
-  label: Main Image
+  label: Thumbnail
 - name: video_source
   type: select
   default: none
@@ -64,16 +64,16 @@ fields:
   type: file
   config:
     maxSize: '5'
-  label: Main Media
+  label: Main Image/Video
   description: Video or image
   showOnly:
     field: video_source
     value: file
-- name: video
+- name: main_video
   type: text
   config:
     required: false
-  label: Video
+  label: Main External Video
   description: Support Raw URL, Youtube and Vimeo Links
   showOnly:
     field: video_source
