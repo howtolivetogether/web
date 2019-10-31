@@ -43,7 +43,7 @@ fields:
   config:
     maxSize: '5'
   label: Thumbnail
-  description: Thumbnail Image (NOT a video and less than 5mb)
+  description: Must be an image (.png, .jpg, .gif, < 5mb)
 - name: video_source
   type: select
   default: none
