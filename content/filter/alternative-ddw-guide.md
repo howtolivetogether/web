@@ -4,9 +4,9 @@ release_date: 2019-11-01T00:47:40.000+00:00
 media_type: file
 title: Observatorium
 description: There is a story behind the dome of the Dr AF Philips observatorium.
-main_media: "/content/images/graffiti.mp4"
+main_media: "/content/images/observatorium.mp4"
 main_external_video: ''
-thumbnail: "/content/images/graffiti-1.jpg"
+thumbnail: "/content/images/observatory.jpg"
 
 ---
 **In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.**  
