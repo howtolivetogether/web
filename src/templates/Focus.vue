@@ -25,7 +25,6 @@ query ($path: String!) {
   post: focus(path: $path) {
     title
     date (format: "MMMM DD YYYY")
-    authors
     content
     thumbnail (quality: 80)
   }

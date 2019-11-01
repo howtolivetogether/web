@@ -1,17 +1,13 @@
 ---
-date: 2019-10-30T04:08:34.000+00:00
-release_date: 2019-10-30T04:08:34.000+00:00
-title: Observatorium
-description: There is a story behind the dome of the Dr AF Philips observatorium.
-authors:
-- Elias
-- Martina
-- Soyoun
-gallery: []
+date: 2019-11-01T00:47:40Z
+release_date: 2019-11-01T00:47:40Z
 media_type: none
-main_media: ''
-main_video: ''
-thumbnail: "/content/images/observatory.jpg"
+title: Step in the Arena
+description: Step in the Arena - Graffiti Walls is an alternative live art gallery
+  in Eindhoven open 24/7
+main_media: /content/images/graffiti.mp4
+main_external_video: ''
+thumbnail: "/content/images/graffiti-1.jpg"
 
 ---
 **In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.**  

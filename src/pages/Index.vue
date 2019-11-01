@@ -89,7 +89,6 @@ query {
         id
         title
         path
-        authors
         date  (format: "MMMM DD YYYY")
         release_date
         thumbnail (width:1000, quality: 75)
