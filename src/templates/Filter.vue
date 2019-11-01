@@ -32,6 +32,7 @@ export default {
           "//player.vimeo.com/video/$1?autoplay=1&loop=1&autopause=0"
         );
     const post = parent.$page.post;
+    console.log(post);
     return {
       ...toRefs(post),
       video: ref(
