@@ -7,27 +7,24 @@
         <a v-for="(href, media) in social" :key="href" :href="href">{{ media }}</a>
       </div>
     </header>
-    <div class="info">
+    <aside class="topic">
       <h1>Home</h1>
       <h1>#1</h1>
-    </div>
-    <aside>
+    </aside>
+    <aside class="timeline">
       <h3>19/09 - 26/09</h3>
     </aside>
-    <nav>
-      <h2
-        v-for="category in categories"
-        :key="category"
-        :class="[category, {active: active === category}]"
-        tabindex="0"
-        @focus="focus(category)"
-      >{{ category }}</h2>
-    </nav>
-    <main>
-      <section v-for="{category, posts} in posts" :key="category" :class="category">
-        <Post v-for="post in posts" :key="post.id" v-bind="post" />
-      </section>
-    </main>
+    <nav
+      v-for="category in categories"
+      :key="'nav-'+category"
+      :class="[category, {active: active === category}]"
+      class="h2"
+      tabindex="0"
+      @focus="focus(category)"
+    >{{ category }}</nav>
+    <section v-for="{category, posts} in posts" :key="category" :class="category">
+      <Post v-for="post in posts" :key="post.id" v-bind="post" />
+    </section>
     <footer>
       <a href="https://app.forestry.io/dashboard/#/">Admin</a>
       <a v-for="(href, media) in social" :key="href" :href="href">{{ media }}</a>
@@ -99,163 +96,140 @@ query {
 }
 </page-query>
 
-<style>
-img {
-  max-width: 100%;
-  width: 100%;
-}
-
+<style lang="scss" scoped>
 .index {
   display: grid;
   grid-template-areas:
     "header header"
-    ". info"
-    "aside nav"
-    "aside main"
-    "aside footer";
-  grid-template-columns: 0.1fr 0.9fr;
-}
+    ". topic"
+    "timeline nav-focus"
+    "timeline nav-forum"
+    "timeline nav-filter"
+    "timeline section-focus"
+    "timeline section-forum"
+    "timeline section-filter"
+    "footer footer";
+  grid-template-columns: 0.1fr 1fr;
 
-footer {
-  grid-area: footer;
-  min-height: 10vh;
-  display: flex;
-  border-top: var(--filet);
-  display: flex;
-  justify-content: space-around;
-}
+  a,
+  > aside h3 {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
 
-header {
-  grid-area: header;
-  padding: 5rem 5rem 0 5rem;
-  height: 60vh;
-  display: grid;
-  grid-gap: 1.7rem;
-  border-bottom: var(--filet);
-}
+  a {
+    padding: var(--gutter) 0;
+    border-right: var(--filet);
+  }
 
-.contact {
-  display: flex;
-  justify-content: space-between;
-}
+  > header,
+  > nav.active {
+    background: var(--main-bg-gradient);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    outline: none;
+  }
 
-footer a,
-.contact a {
-  text-transform: capitalize;
-  text-decoration: none;
-  color: black;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
-  padding: 1rem 0;
-  border-right: var(--filet);
-  font-weight: bold;
-}
+  > header .contact,
+  > footer {
+    display: flex;
+    justify-content: space-around;
+  }
 
-main,
-section {
-  display: grid;
-  grid-gap: 5rem;
-  grid-auto-rows: min-content;
-}
+  > header {
+    display: grid;
+    grid-gap: var(--gutter);
+    min-height: 60vh;
+    padding: var(--gutter) var(--gutter) 0 var(--gutter);
+    border-bottom: var(--filet);
+  }
 
-.info {
-  grid-area: info;
-  border-bottom: var(--filet);
-  border-left: var(--filet);
-  margin-left: -2px;
-  padding: 5rem;
-  display: flex;
-  justify-content: space-between;
-}
+  > aside.topic {
+    border-bottom: var(--filet);
+    border-left: var(--filet);
+    padding: var(--gutter);
+    margin-left: calc(var(--filet-width) * -1);
+    display: flex;
+    justify-content: space-between;
+  }
 
-aside {
-  grid-area: aside;
-  border-top: var(--filet);
-  border-right: var(--filet);
-  padding: 1rem 0;
-  display: flex;
-  justify-content: center;
-  margin-top: -2px;
-}
+  > aside.timeline {
+    border-top: var(--filet);
+    border-right: var(--filet);
+    margin-top: calc(var(--filet-width) * -1);
+    padding: var(--gutter);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 
-aside h3 {
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
-  text-align: right;
-  width: 2.1rem;
-}
+    > h3 {
+      height: max-content;
+    }
+  }
 
-main {
-  grid-area: main;
-  padding: 5rem;
-}
+  > nav {
+    display: grid;
+    padding: calc(var(--gutter) * 0.25) var(--gutter);
+    border-bottom: var(--filet);
 
-.index > nav {
-  grid-area: nav;
-  display: grid;
-}
+    &:after {
+      content: "";
+      border-left: var(--filet);
+      margin: calc(var(--gutter) * -.25) calc(var(--gutter) * -1) calc(var(--gutter) * -.25) 0;
+      background: white;
+    }
 
-.index > nav > h2 {
-  border-bottom: var(--filet);
-  cursor: pointer;
-  padding: 1rem 5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+    &.focus {
+      grid-template-columns: 100fr 1fr;
+    }
 
-.index > nav > h2::after {
-  content: "";
-  border-left: var(--filet);
-  margin: -1rem -5rem -1rem 0;
-  background: white;
-}
+    &.forum {
+      grid-template-columns: 2fr 1fr;
+    }
 
-header,
-.index > nav > h2.active {
-  background: var(--main-bg-gradient);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  outline: none;
-}
+    &.filter {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
-.index > nav > h2.focus {
-  grid-template-columns: 100fr 1fr;
-}
+  > nav:first-child {
+    border: none;
+  }
 
-.index > nav > h2.forum {
-  grid-template-columns: 2fr 1fr;
-}
+  > section {
+    display: grid;
+    grid-gap: var(--gutter);
+    padding: var(--gutter);
+  }
 
-.index > nav > h2.filter {
-  grid-template-columns: 1fr 1fr;
+  > footer {
+    min-height: 10vh;
+    border-top: var(--filet);
+  }
 }
 
 @media (min-width: 1024px) {
-  .index > nav,
-  main {
-    grid-template-areas: "focus forum filter";
-    grid-template-columns: 4fr 3fr 2fr;
-    border: none;
-  }
-  .focus {
-    grid-area: focus;
-  }
-  .forum {
-    grid-area: forum;
-  }
-  .filter {
-    grid-area: filter;
-  }
-  .index > nav > h2 {
-    border-right: var(--filet);
-    border-bottom: none;
-    pointer-events: none;
-  }
-  .index > nav > h2:last-child {
-    border-right: none;
-  }
-  .index > nav > h2::after {
-    content: none;
+  .index {
+    grid-template-areas:
+      "header header header header"
+      ". topic topic topic"
+      "timeline nav-focus nav-forum nav-filter"
+      "timeline section-focus section-forum section-filter"
+      "timeline footer footer footer";
+    grid-template-columns: 1fr 7fr 6fr 4fr;
+
+    > nav {
+      border-bottom: 0;
+      border-left: var(--filet);
+
+      &::after {
+        content: none;
+      }
+
+      &:first-of-type {
+        border-left: none;
+      }
+    }
   }
 }
 </style>

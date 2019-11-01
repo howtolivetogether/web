@@ -7,7 +7,9 @@
 }
 
 :root {
-  --filet: 2px solid #000;
+  --filet-width: 2px;
+  --filet: var(--filet-width) solid #000;
+  --gutter: 2.5rem;
   --main-bg-gradient: linear-gradient(
     -45deg,
     hsl(321, 67%, 94%),
@@ -21,6 +23,12 @@
     hsl(56, 33%, 92%),
     hsl(157, 78%, 89%)
   );
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 5rem;
+  }
 }
 
 *,
@@ -43,7 +51,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+.h2 {
   font-family: "BRRR", "Montserrat", Helvetica, sans-serif;
   text-transform: uppercase;
 }
@@ -58,7 +67,8 @@ header > h1 {
   line-height: 4.3rem;
 }
 
-h2 {
+h2,
+.h2 {
   font-size: 1.8rem;
   line-height: 2.1rem;
 }
@@ -69,6 +79,13 @@ p {
 
 p:not(:last-child) {
   margin-bottom: 1rem;
+}
+
+a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 @media (min-width: 1024px) {
@@ -82,8 +99,9 @@ p:not(:last-child) {
     line-height: 5.6rem;
   }
 
-  h2 {
-    font-size: 1.8rem;
+  h2,
+  .h2 {
+    font-size: 1.5rem;
     line-height: 2.1rem;
   }
 
@@ -113,4 +131,43 @@ hr {
   background: var(--main-bg-gradient);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+header {
+  grid-area: header;
+}
+aside.timeline {
+  grid-area: timeline;
+}
+aside.topic {
+  grid-area: topic;
+}
+aside.info {
+  grid-area: aside-info;
+}
+footer {
+  grid-area: footer;
+}
+nav.focus {
+  grid-area: nav-focus;
+}
+nav.forum {
+  grid-area: nav-forum;
+}
+nav.filter {
+  grid-area: nav-filter;
+}
+section.focus {
+  grid-area: section-focus;
+}
+section.forum {
+  grid-area: section-forum;
+}
+section.filter {
+  grid-area: section-filter;
 }
