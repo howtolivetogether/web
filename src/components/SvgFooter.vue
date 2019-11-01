@@ -1,30 +1,5 @@
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.73 373.28" v-bind="$attrs">
-    <rect class="a" x="-91.35" y="-4.06" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="11.62" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="27.29" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="42.96" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="58.76" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="74.43" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="90.11" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="105.78" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="121.45" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="137.25" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="152.92" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="168.6" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="184.27" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="199.94" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="215.74" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="231.41" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="247.09" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="262.76" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="278.43" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="294.23" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="309.9" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="325.58" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="341.25" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="356.92" width="855.75" height="15.8" />
-    <rect class="a" x="-91.35" y="372.72" width="855.75" height="15.8" />
     <rect class="b" x="517.48" y="105.38" width="15.8" height="165.88" />
     <rect class="b" x="533.15" y="105.38" width="15.8" height="165.88" />
     <rect class="b" x="548.83" y="105.38" width="15.8" height="165.88" />
@@ -88,6 +63,12 @@ export default {};
 </script>
 
 <style scoped>
+svg {
+
+  background-size: 1.5rem 1.8rem;
+  background-image: linear-gradient(to right, transparent 3px, transparent 1px),
+    linear-gradient(to bottom, black 5px, transparent 1px);
+}
 .a {
   fill: none;
 }
@@ -95,7 +76,7 @@ export default {};
 .b {
   stroke: #000;
   stroke-miterlimit: 10;
-  stroke-width: 3;
+  stroke-width: 5px;
 }
 .b {
   fill: #fff;
