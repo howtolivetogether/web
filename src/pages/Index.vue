@@ -18,10 +18,9 @@
       <h2
         v-for="category in categories"
         :key="category"
-        :class="category"
+        :class="[category, {active: active === category}]"
         tabindex="0"
-        @focus="active(category)"
-        @blur="active(null)"
+        @focus="focus(category)"
       >{{ category }}</h2>
     </nav>
     <main>
@@ -46,15 +45,16 @@ export default {
   },
   setup(props, { parent }) {
     const categories = ["focus", "forum", "filter"];
-    const actives = ref(categories);
+    const active = ref();
     return {
+      active,
       social: parent.$page.metadata.infoData.contact,
       title: parent.$page.metadata.siteName,
       subtitle: parent.$page.metadata.infoData.description,
       categories,
-      active: category => (actives.value = category ? [category] : categories),
+      focus: category => (active.value = category),
       posts: computed(() =>
-        actives.value.map(category => ({
+        (active.value ? [active.value] : categories).map(category => ({
           category,
           posts: parent.$page.posts.edges
             .filter(({ node }) => node.fileInfo.directory === category)
@@ -206,12 +206,12 @@ main {
 .index > nav > h2::after {
   content: "";
   border-left: var(--filet);
-  margin: -1rem -5rem;
+  margin: -1rem -5rem -1rem 0;
   background: white;
 }
 
 header,
-.index > nav > h2:focus {
+.index > nav > h2.active {
   background: var(--main-bg-gradient);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
@@ -227,10 +227,10 @@ header,
 }
 
 .index > nav > h2.filter {
-  grid-template-columns: 2.5fr 3fr;
+  grid-template-columns: 1fr 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .index > nav,
   main {
     grid-template-areas: "focus forum filter";

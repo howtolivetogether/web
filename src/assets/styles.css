@@ -42,12 +42,6 @@ body {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
 
-@media (min-width: 900px) {
-  body {
-    font-size: 1.6rem;
-  }
-}
-
 h1,
 h2 {
   font-family: "BRRR", "Montserrat", Helvetica, sans-serif;
@@ -55,8 +49,13 @@ h2 {
 }
 
 h1 {
-  font-size: 4.8rem;
-  line-height: 5.6rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+header > h1 {
+  font-size: 3.4rem;
+  line-height: 4.3rem;
 }
 
 h2 {
@@ -70,6 +69,27 @@ p {
 
 p:not(:last-child) {
   margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  header > h1,
+  h1 {
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
 
 hr {

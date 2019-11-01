@@ -32,7 +32,6 @@ export default {
           "//player.vimeo.com/video/$1?autoplay=1&loop=1&autopause=0"
         );
     const post = parent.$page.post;
-    console.log(post);
     return {
       ...toRefs(post),
       video: ref(
@@ -67,7 +66,7 @@ export default {
 
 <page-query>
 query ($path: String!) {
-  post: filter(path: $path) {
+  post: post(path: $path) {
     title
     date (format: "MMMM DD YYYY")
     content
@@ -76,7 +75,7 @@ query ($path: String!) {
     main_media
     main_external_video
   }
-  all: allFilter {
+  all: allPost {
     edges {
       node {
         path
@@ -95,13 +94,13 @@ article {
   margin: 1rem;
   min-height: calc(100vh - 2rem);
   display: grid;
-  grid-gap: 2.5rem;
+  grid-gap: 1rem;
   grid-template-areas:
-    "title ."
-    "hr1 hr1"
-    "image image"
-    "content content";
-  grid-template-columns: 1fr 1fr;
+    "title title ."
+    "hr1 hr1 hr1"
+    "image image image"
+    "content content content";
+  grid-template-columns: 1fr 1fr 0.5fr;
   grid-template-rows: auto 2px 400px 1fr;
 }
 
@@ -109,11 +108,14 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: sticky;
+  top: 0;
+  background: #fff;
 }
 
 nav span {
-  font-size: 7rem;
-  line-height: 6rem;
+  font-size: 2.2rem;
+  line-height: 0;
   transform: scale(2, 1);
   margin-right: 2rem;
   margin-top: 0.5rem;
@@ -122,6 +124,10 @@ nav span {
 
 h1 {
   grid-area: title;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  background: #fff;
 }
 
 img,
@@ -143,7 +149,7 @@ p {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   article {
     grid-template-areas:
       "title hr2 ."
@@ -157,6 +163,13 @@ p {
   .hr3 {
     display: block;
     border-right: var(--filet);
+  }
+
+  nav span {
+    font-size: 7rem;
+    line-height: 0;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
   }
 }
 </style>

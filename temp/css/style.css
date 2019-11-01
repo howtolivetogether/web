@@ -29,7 +29,7 @@ body {
 
 header{
     position: fixed;
-    /*width: 900px;*/
+    /*width: 1024px;*/
     text-align: left;
     color: #000;
     /*margin-top:50px;*/
@@ -547,7 +547,7 @@ section p, section a{
     display: none;
 }
 
-@media only screen and (max-width: 900px) { 
+@media only screen and (max-width: 1024px) { 
 
 header{
     height: 250px;
