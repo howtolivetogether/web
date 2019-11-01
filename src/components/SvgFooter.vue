@@ -64,8 +64,8 @@ export default {};
 
 <style scoped>
 svg {
-
-  background-size: 1.5rem 1.8rem;
+  margin-top: -5px;
+  background-size: 1.5rem 1.85rem;
   background-image: linear-gradient(to right, transparent 3px, transparent 1px),
     linear-gradient(to bottom, black 5px, transparent 1px);
 }
