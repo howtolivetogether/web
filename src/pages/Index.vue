@@ -221,6 +221,7 @@ query {
     > nav {
       border-bottom: 0;
       border-left: var(--filet);
+      pointer-events: none;
 
       &::after {
         content: none;
