@@ -1,11 +1,14 @@
 <template>
   <div class="index">
     <header>
-      <h1>{{ title }}</h1>
-      <div v-html="subtitle"></div>
-      <div class="contact">
-        <a v-for="(href, media) in social" :key="href" :href="href">{{ media }}</a>
+      <div class="first">
+        <h1>{{ title }}</h1>
+        <div v-html="subtitle"></div>
+        <div class="contact">
+          <a v-for="(href, media) in social" :key="href" :href="href">{{ media }}</a>
+        </div>
       </div>
+      <SvgFooter class="svg-header" />
     </header>
     <aside class="topic">
       <h1>Home</h1>
@@ -25,6 +28,7 @@
     <section v-for="{category, posts} in posts" :key="category" :class="category">
       <Post v-for="post in posts" :key="post.id" v-bind="post" />
     </section>
+    <SvgFooter class="svg-footer" />
     <footer>
       <a href="https://app.forestry.io/dashboard/#/">Admin</a>
       <a v-for="(href, media) in social" :key="href" :href="href">{{ media }}</a>
@@ -34,11 +38,13 @@
 
 <script>
 import Post from "../components/Post.vue";
+import SvgFooter from "../components/SvgFooter.vue";
 import { ref, computed } from "@vue/composition-api";
 
 export default {
   components: {
-    Post
+    Post,
+    SvgFooter
   },
   setup(props, { parent }) {
     const categories = ["focus", "forum", "filter"];
@@ -108,6 +114,7 @@ query {
     "timeline section-focus"
     "timeline section-forum"
     "timeline section-filter"
+    "svg-footer svg-footer"
     "footer footer";
   grid-template-columns: 0.1fr 1fr;
 
@@ -118,8 +125,9 @@ query {
   }
 
   a {
-    padding: var(--gutter) 0;
+    padding: 1rem 1rem 3rem 0;
     border-right: var(--filet);
+    text-transform: uppercase ;
   }
 
   > header,
@@ -138,10 +146,27 @@ query {
 
   > header {
     display: grid;
-    grid-gap: var(--gutter);
     min-height: 60vh;
-    padding: var(--gutter) var(--gutter) 0 var(--gutter);
     border-bottom: var(--filet);
+    grid-template-columns: 1fr;
+
+    h1 {
+      font-size: 3.4rem;
+      line-height: 4.3rem;
+    }
+
+    .first {
+      display: grid;
+      padding: var(--gutter) var(--gutter) 0 var(--gutter);
+      grid-gap: var(--gutter);
+      grid-template-rows: max-content auto min-content;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      min-height: 30vh;
+    }
   }
 
   > aside.topic {
@@ -175,7 +200,8 @@ query {
     &:after {
       content: "";
       border-left: var(--filet);
-      margin: calc(var(--gutter) * -.25) calc(var(--gutter) * -1) calc(var(--gutter) * -.25) 0;
+      margin: calc(var(--gutter) * -0.25) calc(var(--gutter) * -1)
+        calc(var(--gutter) * -0.25) 0;
       background: white;
     }
 
@@ -202,6 +228,10 @@ query {
     padding: var(--gutter);
   }
 
+  > .svg-footer {
+    grid-area: svg-footer;
+  }
+
   > footer {
     min-height: 10vh;
     border-top: var(--filet);
@@ -215,8 +245,18 @@ query {
       ". topic topic topic"
       "timeline nav-focus nav-forum nav-filter"
       "timeline section-focus section-forum section-filter"
+      "timeline svg-footer svg-footer svg-footer"
       "timeline footer footer footer";
     grid-template-columns: 1fr 7fr 6fr 4fr;
+
+    > header {
+      grid-template-columns: 2.2fr 1fr;
+
+      h1 {
+        font-size: 4.8rem;
+        line-height: 5.6rem;
+      }
+    }
 
     > nav {
       border-bottom: 0;
