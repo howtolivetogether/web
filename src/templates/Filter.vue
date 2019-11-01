@@ -36,9 +36,11 @@ export default {
     return {
       ...toRefs(post),
       video: ref(
-        post.main_media && post.main_media.mimeType.includes("video")
+        post.media_type === "file" &&
+          post.main_media &&
+          post.main_media.mimeType.includes("video")
           ? post.main_media
-          : post.main_external_video
+          : post.media_type === "link" && post.main_external_video
           ? {
               src: filter(post.main_external_video),
               mimeType: post.main_external_video.includes(".webm")
@@ -52,7 +54,11 @@ export default {
           : null
       ),
       image: ref(
-        post.main_media && post.main_media.type === "image" ? post.main_media : post.thumbnail
+        post.media_type === "file" &&
+          post.main_media &&
+          post.main_media.type === "image"
+          ? post.main_media
+          : post.thumbnail
       )
     };
   }
@@ -66,6 +72,7 @@ query ($path: String!) {
     date (format: "MMMM DD YYYY")
     content
     thumbnail (quality: 80)
+    media_type
     main_media
     main_external_video
   }
