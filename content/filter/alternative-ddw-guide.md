@@ -1,11 +1,11 @@
 ---
-date: 2019-11-01T00:47:40Z
-release_date: 2019-11-01T00:47:40Z
-media_type: none
+date: 2019-11-01T00:47:40.000+00:00
+release_date: 2019-11-01T00:47:40.000+00:00
+media_type: file
 title: Step in the Arena
 description: Step in the Arena - Graffiti Walls is an alternative live art gallery
   in Eindhoven open 24/7
-main_media: /content/images/graffiti.mp4
+main_media: "/content/images/graffiti.mp4"
 main_external_video: ''
 thumbnail: "/content/images/graffiti-1.jpg"
 
