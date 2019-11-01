@@ -5,23 +5,54 @@
     <nav>
       <span @click="$router.go(-1)">X</span>
     </nav>
-    <video controls autoplay muted v-if="main_video">
-      <source :src="main_video.src" :type="main_video.mimeType" />
-    </video>
-    <g-image :src="thumbnail" :alt="title" v-else />
+    <template v-if="video">
+      <iframe :src="video.src" frameborder="0" allowfullscreen allow="autoplay" v-if="video.iframe"></iframe>
+      <video controls autoplay muted v-else>
+        <source :src="video.src" :type="video.mimeType" />
+      </video>
+    </template>
+    <g-image :src="image" :alt="title" v-else />
     <p v-html="content"></p>
   </article>
 </template>
 
 <script>
+import { toRefs, ref } from "@vue/composition-api";
+
 export default {
   setup(props, { parent }) {
+    const filter = src =>
+      src
+        .replace(
+          /(?:http[s]?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/g,
+          "http://www.youtube.com/embed/$1?autoplay=1&loop=1&autopause=0"
+        )
+        .replace(
+          /(?:http[s]?:\/\/(?:www.)?vimeo\.com)\/(.+)/g,
+          "//player.vimeo.com/video/$1?autoplay=1&loop=1&autopause=0"
+        );
+    const post = parent.$page.post;
     return {
-      ...parent.$page.post,
-      main_video:
-        parent.$page.post.main_media &&
-        parent.$page.post.main_media.mimeType.includes("video") &&
-        parent.$page.post.main_media
+      ...toRefs(post),
+      video: ref(
+        post.main_media && post.main_media.mimeType.includes("video")
+          ? post.main_media
+          : post.main_external_video
+          ? {
+              src: filter(post.main_external_video),
+              mimeType: post.main_external_video.includes(".webm")
+                ? "video/webm"
+                : "video/mp4",
+              iframe:
+                filter(post.main_external_video) !== post.main_external_video
+            }
+          : post.thumbnail.mimeType.includes("video")
+          ? post.thumbnail
+          : null
+      ),
+      image: ref(
+        post.main_media && post.main_media.type === "image" ? post.main_media : post.thumbnail
+      )
     };
   }
 };
@@ -36,6 +67,7 @@ query ($path: String!) {
     content
     thumbnail (quality: 80)
     main_media
+    main_external_video
   }
   all: allFilter {
     edges {
@@ -86,6 +118,7 @@ h1 {
 }
 
 img,
+iframe,
 video {
   grid-area: image;
   height: 100%;
