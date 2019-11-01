@@ -1,13 +1,12 @@
 ---
 date: 2019-11-01T00:47:40.000+00:00
 release_date: 2019-11-01T00:47:40.000+00:00
-title: Step in the Arena
-description: Step in the Arena - Graffiti Walls is an alternative live art gallery
-  in Eindhoven open 24/7
+title: Food is Home
+description: One of the fastest way to feel at home, is by finding out where to eat.
 media_type: file
-main_media: "/content/images/graffiti.mp4"
+main_media: "/content/images/food.mp4"
 main_external_video: ''
-thumbnail: "/content/images/graffiti-1.jpg"
+thumbnail: "/content/images/food.jpg"
 
 ---
 **In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.**  
