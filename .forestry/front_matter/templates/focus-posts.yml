@@ -81,7 +81,6 @@ fields:
   label: Thumbnail
   description: Image or video file used to preview the post, also known as a thumbnail
 pages:
-- content/focus/hello-world.md
 - content/filter/step-in-the-arena.md
 - content/focus/alternative-ddw-guide.md
 - content/filter/observatorium.md
