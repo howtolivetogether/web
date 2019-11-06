@@ -49,6 +49,27 @@ export default {
   setup(props, { parent }) {
     const categories = ["focus", "forum", "filter"];
     const active = ref();
+    const instagram = parent.$page.instagram.edges
+      .map(({ node }) => node)
+      .map(
+        ({
+          id,
+          display_url,
+          media_preview,
+          edge_media_to_caption,
+          shortcode,
+          taken_at_timestamp
+        }) => ({
+          id,
+          title: id,
+          path: `https://www.instagram.com/p/${shortcode}/`,
+          thumbnail: display_url,
+          description: edge_media_to_caption.edges[0].node.text,
+          date: new Date(taken_at_timestamp * 1000),
+          release_date: new Date(taken_at_timestamp * 1000),        
+          instagram: true  
+        })
+      );
     return {
       active,
       social: parent.$page.metadata.infoData.contact,
@@ -59,9 +80,12 @@ export default {
       posts: computed(() =>
         (active.value ? [active.value] : categories).map(category => ({
           category,
-          posts: parent.$page.posts.edges
-            .filter(({ node }) => node.fileInfo.directory === category)
-            .map(({ node }) => node)
+          posts: [
+            ...parent.$page.posts.edges
+              .filter(({ node }) => node.fileInfo.directory === category)
+              .map(({ node }) => node),
+            ...(category === "filter" ? instagram : [])
+          ]
         }))
       )
     };
@@ -83,6 +107,26 @@ query {
       }
     }
   }
+  instagram: allInstagramPhoto {
+		edges {
+      node {
+        id
+        display_url 
+        media_preview 
+        shortcode
+        taken_at_timestamp
+        edge_media_to_caption 
+        {
+          edges 
+          {
+            node {
+              text
+            }
+          }
+        }
+      }
+    }
+	}
   posts: allPost {
     edges {
       node {
@@ -118,16 +162,16 @@ query {
     "footer footer";
   grid-template-columns: 0.1fr 1fr;
 
-  a,
+  :not(section) a,
   > aside h3 {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
   }
 
-  a {
+  :not(section) a {
     padding: 1rem 1rem 3rem 0;
     border-right: var(--filet);
-    text-transform: uppercase ;
+    text-transform: uppercase;
   }
 
   > header,

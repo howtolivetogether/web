@@ -21,8 +21,9 @@
 import { computed, ref } from "@vue/composition-api";
 
 export default {
-  props: ["thumbnail", "title", "release_date", "date", "description", "path"],
+  props: ["thumbnail", "title", "release_date", "date", "description", "path", "instagram"],
   setup(props) {
+    console.log(props.instagram, props.date);
     const currentTime = ref(new Date().getTime());
     setInterval(() => (currentTime.value = new Date().getTime()), 1000);
     return {
