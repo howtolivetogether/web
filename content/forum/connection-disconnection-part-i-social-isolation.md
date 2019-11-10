@@ -1,6 +1,6 @@
 ---
 date: 2019-11-10T14:10:42Z
-release_date: 2019-11-10T15:00:42Z
+release_date: 2019-11-10T15:00:00Z
 media_type: link
 title: 'Connection - Disconnection Part I: Social Isolation'
 description: This video is a part of a series of three videos. Based on the Social
