@@ -9,7 +9,7 @@ description: This video is a part of a series of three videos. Based on the Soci
   than ever but paradoxically more isolated than ever. In this context what is the
   present and the future of physical connection?
 main_media: ''
-main_external_video: https://youtu.be/dLLWBZvYoi4
+main_external_video: https://www.youtube.com/watch?v=dLLWBZvYoi4
 thumbnail: "/content/images/miniature-1.jpg"
 
 ---
