@@ -1,4 +1,5 @@
-<html>
+<template>
+
 <div class="bg"></div>
 <svg version="1.1" id="A" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 1080 500" style="enable-background:new 0 0 1080 300;" xml:space="preserve" >
@@ -102,88 +103,7 @@
 
 
 
-<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.73 373.28" v-bind="$attrs" >
-    <rect class="a" x="517.48" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="533.15" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="548.83" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="564.5" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="580.17" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="580.17" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="595.85" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="611.52" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="627.19" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="642.87" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="580.33" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="569.88" y="121.06" width="15.8" height="165.88" />
-    <rect class="a" x="559.43" y="136.73" width="15.8" height="165.88" />
-    <rect class="a" x="548.98" y="152.4" width="15.8" height="165.88" />
-    <rect class="a" x="538.53" y="168.08" width="15.8" height="165.88" />
-    </svg> -->
-
-  <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.73 373.28" v-bind="$attrs" >
-    <rect class="a" x="517.48" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="533.15" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="548.83" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="564.5" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="580.17" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="580.17" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="595.85" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="611.52" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="627.19" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="642.87" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="580.33" y="105.38" width="15.8" height="165.88" />
-    <rect class="a" x="569.88" y="121.06" width="15.8" height="165.88" />
-    <rect class="a" x="559.43" y="136.73" width="15.8" height="165.88" />
-    <rect class="a" x="548.98" y="152.4" width="15.8" height="165.88" />
-    <rect class="a" x="538.53" y="168.08" width="15.8" height="165.88" />
-
-    
-    <rect class="c" x="189.06" y="29.94" width="15.8" height="165.88" />
-    <rect class="c" x="199.51" y="45.61" width="15.8" height="165.88" />
-    <rect class="c" x="209.96" y="61.29" width="15.8" height="165.88" />
-    <rect class="c" x="220.41" y="76.96" width="15.8" height="165.88" />
-    <rect class="c" x="230.85" y="92.63" width="15.8" height="165.88" />
-    <rect class="c" x="131.59" y="61.29" width="15.8" height="165.88" />
-    <rect class="c" x="147.26" y="61.29" width="15.8" height="165.88" />
-    <rect class="c" x="162.94" y="61.29" width="15.8" height="165.88" />
-    <rect class="c" x="178.61" y="61.29" width="15.8" height="165.88" />
-    <rect class="c" x="194.28" y="61.29" width="15.8" height="165.88" />
-    <rect class="c" x="95.02" y="29.94" width="15.8" height="165.88" />
-    <rect class="c" x="105.47" y="45.61" width="15.8" height="165.88" />
-    <rect class="c" x="115.92" y="61.29" width="15.8" height="165.88" />
-    <rect class="c" x="126.37" y="76.96" width="15.8" height="165.88" />
-    <rect class="c" x="136.81" y="92.63" width="15.8" height="165.88" />
-
-    <rect class="b" x="439.04" y="169.41" width="15.8" height="165.88" />
-    <rect class="b" x="454.71" y="169.41" width="15.8" height="165.88" />
-    <rect class="b" x="470.38" y="169.41" width="15.8" height="165.88" />
-    <rect class="b" x="486.06" y="169.41" width="15.8" height="165.88" />
-    <rect class="b" x="501.73" y="169.41" width="15.8" height="165.88" />
-    <rect class="b" x="381.57" y="105.99" width="15.8" height="165.88" />
-    <rect class="b" x="392.02" y="121.67" width="15.8" height="165.88" />
-    <rect class="b" x="402.46" y="137.34" width="15.8" height="165.88" />
-    <rect class="b" x="412.91" y="153.01" width="15.8" height="165.88" />
-    <rect class="b" x="423.36" y="168.69" width="15.8" height="165.88" />
-
-    <rect class="d" x="241.6" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="257.28" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="272.95" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="288.62" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="304.3" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="304.3" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="319.97" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="335.64" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="351.32" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="366.99" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="304.3" y="105.99" width="15.8" height="165.88" />
-    <rect class="d" x="314.75" y="121.67" width="15.8" height="165.88" />
-    <rect class="d" x="325.19" y="137.34" width="15.8" height="165.88" />
-    <rect class="d" x="335.64" y="153.01" width="15.8" height="165.88" />
-    <rect class="d" x="346.09" y="168.69" width="15.8" height="165.88" />
-
-    
-  </svg> -->
-</html>
+</template>
 
 <script>
 export default {};
@@ -230,38 +150,7 @@ export default {};
 svg{
   position: absolute;
 }
-/*.a,
-.b,
-.c,
-.d {
-  stroke: #000;
-  stroke-miterlimit: 10;
-  stroke-width: 3px;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-.a {
-  fill: #fff;*/
 
- /* background-image:linear-gradient(to bottom right,#002f4b,#dc4225);
-  */
-
-/*}
-.b {
-  fill: red;
-  animation-name: L_animation;
-}
-.c {
-  fill: green;
-  animation-name: H_animation;
-}
-.d {
-  fill: blue;
-  animation-name: T2_animation;
-}*/
 #A{ 
     animation-name: Tanimation_A;
     animation-duration: 15s;
