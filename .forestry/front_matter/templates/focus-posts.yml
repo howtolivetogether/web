@@ -81,6 +81,7 @@ fields:
   label: Thumbnail
   description: Image or video file used to preview the post, also known as a thumbnail
 pages:
+- content/forum/connection-disconnection-part-i-let-s-touch.md
 - content/forum/connection-disconnection-part-i-social-isolation.md
 - content/forum/connection-disconnection-iii-haptic-blue.md
 - content/filter/step-in-the-arena.md
