@@ -2,7 +2,7 @@
 
 <div class="bg"></div>
 <svg version="1.1" id="A" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   viewBox="0 0 1080 500" style="enable-background:new 0 0 1080 300;" xml:space="preserve" >
+   viewBox="0 0 1080 500" style="enable-background:new 0 0 1080 300;" xml:space="preserve" v-bind="$attrs">
 
 <g>
   <line class="st12" x1="261.1" y1="260.4" x2="344.4" y2="260.4"/>
