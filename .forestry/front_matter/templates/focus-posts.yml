@@ -80,6 +80,16 @@ fields:
     maxSize: '3'
   label: Thumbnail
   description: Image or video file used to preview the post, also known as a thumbnail
+- name: code
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Code
+  description: Your code
 pages:
 - content/forum/connection-disconnection-part-i-let-s-touch.md
 - content/forum/connection-disconnection-part-i-social-isolation.md
