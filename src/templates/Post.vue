@@ -12,6 +12,7 @@
       </video>
     </template>
     <g-image :src="image" :alt="title" v-else />
+    <div v-html="code"></div>
     <p v-html="content"></p>
   </article>
 </template>
@@ -70,6 +71,7 @@ query ($path: String!) {
     title
     date (format: "MMMM DD YYYY")
     content
+    code
     thumbnail (quality: 80)
     media_type
     main_media
