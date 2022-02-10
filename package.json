@@ -17,7 +17,7 @@
     "@vue/composition-api": "^0.3.2",
     "@zefman/gridsome-source-instagram": "^0.1.2",
     "gridsome": "^0.7.9",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^8.0.0"
   },
   "keywords": [
